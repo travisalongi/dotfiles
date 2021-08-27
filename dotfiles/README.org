@@ -1,0 +1,6 @@
+* Made this rep following recommendation from distrotube "easier way to manage dot files"
+1. There is a magic line in .zshrc that alias config to adding git 'stuff' to a bare directory
+2. We can then use config add <dotfile>
+   Ex. $ config add .zshrc
+3. Then do a config add -m "message"
+4. Finally do a config push -U origin master
