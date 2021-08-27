@@ -3,4 +3,4 @@
 2. We can then use config add <dotfile>
    Ex. $ config add .zshrc
 3. Then do a config add -m "message"
-4. Finally do a config push -U origin master
+4. Finally do a config push -u origin master
