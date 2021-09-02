@@ -8,6 +8,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export VISUAL='nvim'
+export EDITOR='nvim'
+
 ## My aliases
 alias cl='clear'
 alias v='nvim'
@@ -25,11 +28,9 @@ alias lt='exa -T --icons'
 alias r='ranger'
 alias n='ncmpcpp'
 alias za='zathura'
+alias sx='sxiv'
 alias weather='curl wttr.in'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-# Use z for z.lua auto completion in place of cd
-eval "$(lua /home/talongi/Documents/z.lua/z.lua --init bash)"
-$_ZL_CMD
 
 # SSH connect to nicoya
 alias nicoya='ssh -o TCPKeepAlive=yes -X -Y talongi@nicoya.pmc.ucsc.edu'
