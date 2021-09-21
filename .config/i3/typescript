@@ -1,0 +1,634 @@
+Script started on 2021-09-15 15:29:07-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="79" LINES="26"]
+┏━┓┏━┓┏━┓╺┓    ┏━┓┏━┓   ╺┓ ┏━╸      ╺┓ ┏━╸ ┏━┓┏━┓ ┏━┓┏━┓
+┏━┛┃┃┃┏━┛ ┃ ╺━╸┃┃┃┗━┫╺━╸ ┃ ┗━┓       ┃ ┗━┓╹┏━┛┗━┫╹┃┃┃  ┃
+┗━╸┗━┛┗━╸╺┻╸   ┗━┛┗━┛   ╺┻╸┗━┛      ╺┻╸┗━┛╹┗━╸┗━┛╹┗━┛  ╹
+[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/i3]1;~/.config/i3[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/i3 [49m[34m[39m [K[?1h=[?2004h[32mscript[39m[39m[4ms[39m[4mc[39m[4mr[39m[4mi[39m[4mp[39m[4mt[4ms[24m[?1l>[?2004l
+]2;scripts]1;scripts[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/i3/scripts]1;..ig/i3/scripts[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/i3/scripts [49m[34m[39m [K[?1h=[?2004h[32ml[39m[32ml[32ms[39m[?1l>[?2004l
+]2;exa --icons]1;ls[32m [1mi3exit.sh[0m  [32m [1mpicom-toggle.sh[0m
+[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/i3/scripts]1;..ig/i3/scripts[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/i3/scripts [49m[34m[39m [K[?1h=[?2004h[4mp[24m[4mp[4mi[24m[24m[32mp[24m[32mi[32mc[39m[39m[4mp[39m[4mi[39m[4mc[4mo[24m[24mp[24mi[24mc[24mo
+[J[0mpicom        [Jpicom-trans  [Jpiconv     [J[A[0m[27m[24m[0m[39m[49m[43Cpico[K[0m[39m[49m[32mp[32mi[32mc[32mo[32mm[39m[39m[4mp[39m[4mi[39m[4mc[39m[4mo[39m[4mm[4m-[24m[4m-[4mt[24m[4mt[4mo[24m
+[J[A[51C[8D[24mp[24mi[24mc[24mo[24mm[24m-[24mt[24mo[8D[4mp[4mi[4mc[4mo[4mm[4m-[4mt[24m [4m-[24m[24m [24m[32mp[24m[32mi[24m[32mc[24m[32mo[24m[32mm[39m[24m [39m[4mp[39m[4mi[39m[4mc[39m[4mo[24m[39m [24m[32mp[24m[32mi[24m[32mc[39m[24m [39m[4mp[39m[4mi[24m[39m [4mp[24m[24m [24m [32m.[39m[39m[4m.[4m/[24m[4m.[4m/[4mp[24m[24m[1m[31m.[24m[1m[31m/[24m[1m[31mp[1m[31mo[0m[39m[0m[39m[4m.[0m[39m[4m/[0m[39m[4mp[24m[0m[39m [4mp[4mi[24m[4mi[4mc[24m[4mc[4mo[24m[4mo[4mm[24m[24m[32m.[24m[32m/[24m[32mp[24m[32mi[24m[32mc[24m[32mo[24m[32mm[32m-toggle.sh[39m[1m [0m[0m [?1l>[?2004l
+[J]2;./picom-toggle.sh]1;./picom-toggle.sh[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/i3/scripts]1;..ig/i3/scripts[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/i3/scripts [49m[34m[39m [K[?1h=[?2004h[32m./picom-toggle.sh[39m[?1l>[?2004l
+]2;./picom-toggle.sh]1;./picom-toggle.sh[ 09/15/2021 15:29:35.174 parse_blur_method [33mWARN[0m ] Blur method 'kawase' has been renamed to 'dual_kawase'. Interpreted as 'dual_kawase', but this will stop working soon.
+[ 09/15/2021 15:29:35.175 get_cfg [33mWARN[0m ] Blur strength >20 not supported by dual_kawase method, capping to 20.
+[ 09/15/2021 15:29:35.175 get_cfg [33mWARN[0m ] Dual-kawase blur is not implemented by the legacy backends, you must use the `experimental-backends` option.
+[ 09/15/2021 15:29:35.307 init_render [33mWARN[0m ] Old backends only support blur method "kernel". Your blur setting will not be applied
+[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/i3/scripts]1;..ig/i3/scripts[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/i3/scripts [49m[34m[39m [K[?1h=[?2004h[32ml[39m[32ml[32ms[39m[?1l>[?2004l
+]2;exa --icons]1;ls[32m [1mi3exit.sh[0m  [32m [1mpicom-toggle.sh[0m
+[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/i3/scripts]1;..ig/i3/scripts[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/i3/scripts [49m[34m[39m [K[?1h=[?2004h[1m[31mc[0m[39m[0m[32mc[32md[39m [4m.[24m[4m.[4m.[24m[4m.[4m/[24m[?1l>[?2004l
+]2;cd ../]1;cd[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/i3]1;~/.config/i3[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/i3 [49m[34m[39m [K[?1h=[?2004h[32ml[39m[32ml[32ms[39m[?1l>[?2004l
+]2;exa --icons]1;ls arcolinux-archive.theme      arcolinux-var-ashes.theme     system-overview
+ arcolinux-default.theme      arcolinux-var-nord.theme      typescript
+ arcolinux-dracut.theme       arcolinux-var-sulpher.theme  
+ arcolinux-firedust.theme     arcolinux-zion.theme         
+ arcolinux-frama.theme        config                       
+ arcolinux-gravemind.theme    config-polybar               
+ arcolinux-mango.theme        conky-i3statusbar            
+ arcolinux-mastermind.theme   i3blocks-awesome.conf        
+ arcolinux-mater.theme        i3blocks-original.conf       
+ arcolinux-mind.theme         i3blocks-rainbow.conf        
+ arcolinux-mordor.theme       i3blocks.conf                
+ arcolinux-nantes.theme       i3status.conf                
+ arcolinux-pinky.theme       [34m [1mold[0m                          
+ arcolinux-ruins.theme        picom.conf                   
+ arcolinux-solar.theme       [34m [1mscripts[0m                      
+ arcolinux-sunset.theme      [32m [1mstart-conky-i3statusbar.sh[0m   
+[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/i3]1;~/.config/i3[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/i3 [49m[34m[39m [K[?1h=[?2004h[4mc[24m[24m[32mc[32md[39m [4m.[24m[4m.[4m.[24m[4m.[4m/[24m[?1l>[?2004l
+]2;cd ../]1;cd[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config]1;~/.config[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config [49m[34m[39m [K[?1h=[?2004h[32ml[39m[32ml[32ms[39m[32ml[39m[39m [39m [4mc[24m[24m[32mc[32md[39m [4mp[24m[4mp[4mo[24m[4mo[4ml[24m[4ml[4mybar[1m[4m/[0m[24m[4mr[24m[0m[24m [?1l>[?2004l
+]2;cd polybar]1;cd[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[32ml[39m[32ml[32ms[39m[?1l>[?2004l
+]2;exa --icons]1;ls config  [32m [1mlaunch.sh[0m  [34m [1mscripts[0m
+[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[32ml[39m[32ml[32ma[39m[39ml[39ma
+[0mla             laptop-detect  lav2avi.sh     lavaddwav      lavtrans     
+lame           last           lav2mpeg       lavinfo                     
+LANG           lastb          lav2wav        lavpipe                     
+[Jlanginfo       [Jlastlog        [Jlav2yuv        [Jlavtc.sh       [J             [4A[0m[27m[24m[0m[39m[49m[40Cla[K[0m[39m[49m[4ml[4ma[4mu[24m[4mu[4mn[24m[4mn[4mc[24m[4mc[4mh[24m
+[J[A[46C[24m[1m[31m-[24m[1m[31ml[24m[1m[31ma[24m[1m[31mu[24m[1m[31mn[24m[1m[31mc[1m[31mh[0m[39m[1m[31mc[0m[39m[0m[39m [1m[31mn[0m[39m[0m[39m [1m[31mu[0m[39m[0m[39m [1m[31ma[0m[39m[0m[39m [1m[31m-[1m[31ml[0m[39m[0m[39m [0m[32m-[39m[0m[39m [39m [32m.[39m[39m[4m.[4m/[24m[4m.[4m/[4ml[24m[4ml[4ma[24m[24m[32m.[24m[32m/[24m[32ml[24m[32ma[32munch.sh[39m[1m [0m[0m [?1l>[?2004l
+[J]2;./launch.sh]1;./launch.sh[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[1;34mnotice: [0mParsing config file: /home/talongi/.config/polybar/config[0m
+[1;34mnotice: [0mLoaded font "Noto Sans:size=10" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)[0m
+[1;34mnotice: [0mLoaded font "FontAwesome:size=10" (name=FontAwesome, offset=0, file=/usr/share/fonts/awesome-terminal-fonts/fontawesome-regular.ttf)[0m
+[1;34mnotice: [0mLoaded font "Noto Sans:size=10" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)[0m
+[1;34mnotice: [0mLoaded font "Noto Sans Mono:size=10" (name=Noto Sans Mono, offset=0, file=/usr/share/fonts/noto/NotoSansMono-Regular.ttf)[0m
+[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [1;31merror: [0mtray: Failed to put tray above 0x3e00002 in the stack (XCB_MATCH (8))[0m
+[1;33mwarn: [0mSystray selection already managed (window=0x260000c)[0m
+[?2004l
+[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m [31m✘[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[32ml[39m[32ml[32ms[39m[?1l>[?2004l
+]2;exa --icons]1;ls config  [32m [1mlaunch.sh[0m  [34m [1mscripts[0m
+[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[32mv[39m[32mv[39m [4mc[24m[4mc[4mo[24m[4mo[4mn[24m[4mn[4mf[24m[4mf[4mi[24m[4mi[4mg[24m[1m [0m[0m [?1l>[?2004l
+]2;nvim config]1;v[?1049h[22;0;0t[22;0t[?1h=[H[2J]11;?[?2004h[?25h[?25l(B[m[H[2J[93m   1 (B[m;=====================================================[K
+[93m   2 (B[m;[K
+[93m   3 (B[m;   To learn more about how to configure Polybar[K
+[93m   4 (B[m;   go to https://github.com/jaagr/polybar[K
+[93m   5 (B[m;[K
+[93m   6 (B[m;   The README contains alot of information[K
+[93m   7 (B[m;       Themes : https://github.com/jaagr/dots/tree/master/.local/etc/them[93m     (B[mer/themes[K
+[93m   8 (B[m;   https://github.com/jaagr/polybar/wiki/[K
+[93m   9 (B[m;   https://github.com/jaagr/polybar/wiki/Configuration[K
+[93m  10 (B[m;   https://github.com/jaagr/polybar/wiki/Formatting[K
+[93m  11 (B[m;[K
+[93m  12 (B[m;=====================================================[K
+[93m  13 (B[m[K
+[93m  14 (B[m[global/wm][K
+[93m  15 (B[m;https://github.com/jaagr/polybar/wiki/Configuration#global-wm-settings[K
+[93m  16 (B[mmargin-top = 0[K
+[93m  17 (B[mmargin-bottom = 0[K
+[93m  18 (B[m[K
+[93m  19 (B[m[settings][K
+[93m  20 (B[m;https://github.com/jaagr/polybar/wiki/Configuration#application-settings[K
+[93m  21 (B[mthrottle-output = 5[K
+[93m  22 (B[mthrottle-output-for = 10[K
+(B[0;1m[38;5;235m[48;5;76m NORMAL (B[m[38;5;145m[48;5;240m config (B[m[38;5;145m[48;5;235m                            unix | utf-8 | no ft (B[m[38;5;145m[48;5;240m   0% (B[0;1m[38;5;235m[48;5;76m   1:1  ]112[2 q]112[2 q[1;6H[?25h[?25l[?1004h[?25h[?25l[25;69H(B[mj         [1;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m2[2;6H[?25h[?25l[25;69H(B[mj[2;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m3[3;6H[?25h[?25l[25;69H(B[mj[3;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m4[4;6H[?25h[?25l[25;69H(B[mj[4;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m5[5;6H[?25h[?25l[25;69H(B[mj[5;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m6[6;6H[?25h[?25l[25;69H(B[mj[6;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m7[7;6H[?25h[?25l[25;69H(B[mj[7;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m8[9;6H[?25h[?25l[25;69H(B[mj[9;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m9[10;6H[?25h[?25l[25;69H(B[mj[10;6H[?25h[?25l[25;69H [24;74H(B[0;1m[38;5;235m[48;5;76m10[11;6H[?25h[?25l[25;69H(B[mj[11;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m1[12;6H[?25h[?25l[25;69H(B[mj[12;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m2[13;6H[?25h[?25l[25;69H(B[mj[13;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m3:0[14;6H[?25h[?25l[25;69H(B[mj[14;6H[?25h[?25l[25;69H [15;6H[46m[(B[mglobal/wm[46m][24;75H(B[0;1m[38;5;235m[48;5;76m4:1[15;6H[?25h[?25l[25;69H(B[mj[15;6H[?25h[?25l[25;69H [15;6H[global/wm][24;75H(B[0;1m[38;5;235m[48;5;76m5[16;6H[?25h[?25l[25;69H(B[mj[16;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m6[17;6H[?25h[?25l[25;69H(B[mj[17;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m7[18;6H[?25h[?25l[25;69H(B[mj[18;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m8:0[19;6H[?25h[?25l[25;69H(B[mj[19;6H[?25h[?25l[25;69H [20;6H[46m[(B[msettings[46m][24;75H(B[0;1m[38;5;235m[48;5;76m9:1[20;6H[?25h[?25l[25;69H(B[mj[20;6H[?25h[?25l[25;69H [20;6H[settings][24;74H(B[0;1m[38;5;235m[48;5;76m20[21;6H[?25h[?25l[25;69H(B[mj[21;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m1[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  23 (B[mscreenchange-reload = true[K[24;69H[38;5;145m[48;5;240m1% (B[0;1m[38;5;235m[48;5;76m  23[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  24 (B[mcompositing-background = over[K[24;75H(B[0;1m[38;5;235m[48;5;76m4[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  25 (B[mcompositing-foreground = over[K[24;75H(B[0;1m[38;5;235m[48;5;76m5[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  26 (B[mcompositing-overline = over[K[24;75H(B[0;1m[38;5;235m[48;5;76m6[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  27 (B[mcompositing-underline = over[K[24;75H(B[0;1m[38;5;235m[48;5;76m7[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  28 (B[mcompositing-border = over[K[24;75H(B[0;1m[38;5;235m[48;5;76m8[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  29 (B[m[K
+[93m  30 (B[m; Define fallback values used by all module formats[K[24;75H(B[0;1m[38;5;235m[48;5;76m9:0[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [24;74H(B[0;1m[38;5;235m[48;5;76m30:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  31 (B[mformat-foreground = #FF0000[K[24;75H(B[0;1m[38;5;235m[48;5;76m1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  32 (B[mformat-background = #00FF00[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  33 (B[mformat-underline =[K[24;75H(B[0;1m[38;5;235m[48;5;76m3[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  34 (B[mformat-overline =[K[24;75H(B[0;1m[38;5;235m[48;5;76m4[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  35 (B[mformat-spacing =[K[24;75H(B[0;1m[38;5;235m[48;5;76m5[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  36 (B[mformat-padding =[K[24;75H(B[0;1m[38;5;235m[48;5;76m6[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  37 (B[mformat-margin =[K[24;75H(B[0;1m[38;5;235m[48;5;76m7[23;6H[?25h[?25l[25;69H(B[mk[23;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m6[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m7[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  38 (B[mformat-offset =[K[24;75H(B[0;1m[38;5;235m[48;5;76m8[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  39 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m9:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  40 (B[m[46m[(B[mcolors[46m](B[m[K[24;74H(B[0;1m[38;5;235m[48;5;76m40:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[22;6H[colors]
+[93m  41 (B[m; Nord theme ============[K[24;75H(B[0;1m[38;5;235m[48;5;76m1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  42 (B[mbackground = #2F343F[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  43 (B[mforeground = #f3f4f5[K[24;75H(B[0;1m[38;5;235m[48;5;76m3[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  44 (B[malert = #d08770[K[24;75H(B[0;1m[38;5;235m[48;5;76m4[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  45 (B[mvolume-min = #a3be8c[K[24;69H[38;5;145m[48;5;240m2% (B[0;1m[38;5;235m[48;5;76m  45[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  46 (B[mvolume-med = #ebcb8b[K[24;75H(B[0;1m[38;5;235m[48;5;76m6[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  47 (B[mvolume-max = #bf616a[K[24;75H(B[0;1m[38;5;235m[48;5;76m7[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  48 (B[m; =======================[K[24;75H(B[0;1m[38;5;235m[48;5;76m8[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  49 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m9:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  50 (B[m; Gotham theme ==========[K[24;74H(B[0;1m[38;5;235m[48;5;76m50:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  51 (B[m; background = #0a0f14[K[24;75H(B[0;1m[38;5;235m[48;5;76m1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  52 (B[m; foreground = #99d1ce[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  53 (B[m; alert = #d26937[K[24;75H(B[0;1m[38;5;235m[48;5;76m3[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  54 (B[m; volume-min = #2aa889[K[24;75H(B[0;1m[38;5;235m[48;5;76m4[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  55 (B[m; volume-med = #edb443[K[24;75H(B[0;1m[38;5;235m[48;5;76m5[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  56 (B[m; volume-max = #c23127[K[24;75H(B[0;1m[38;5;235m[48;5;76m6[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  57 (B[m; =======================[K[24;75H(B[0;1m[38;5;235m[48;5;76m7[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  58 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m8:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  59 (B[m; INTRCPTR theme ============[K[24;75H(B[0;1m[38;5;235m[48;5;76m9:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  60 (B[m;background = ${xrdb:color0:#222}[K[24;74H(B[0;1m[38;5;235m[48;5;76m60[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  61 (B[m;background = #aa000000[K[24;75H(B[0;1m[38;5;235m[48;5;76m1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  62 (B[m;background-alt = #444[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  63 (B[m;foreground = ${xrdb:color7:#222}[K[24;75H(B[0;1m[38;5;235m[48;5;76m3[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  64 (B[m;foreground = #fff[K[24;75H(B[0;1m[38;5;235m[48;5;76m4[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  65 (B[m;foreground-alt = #555[K[24;75H(B[0;1m[38;5;235m[48;5;76m5[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  66 (B[m;primary = #ffb52a[K[24;75H(B[0;1m[38;5;235m[48;5;76m6[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  67 (B[m;secondary = #e60053[K[24;69H[38;5;145m[48;5;240m3% (B[0;1m[38;5;235m[48;5;76m  67[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  68 (B[m;alert = #bd2c40[K[24;75H(B[0;1m[38;5;235m[48;5;76m8[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  69 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m9:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  70 (B[m##########################################################################[93m     (B[m######[K[24;74H(B[0;1m[38;5;235m[48;5;76m70:1[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  71 (B[m##########################################################################[93m     (B[m######[K[24;75H(B[0;1m[38;5;235m[48;5;76m1[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  72 (B[m############                         MAINBAR-I3                     ######[93m     (B[m######[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  73 (B[m##########################################################################[93m     (B[m######[K[24;75H(B[0;1m[38;5;235m[48;5;76m3[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  74 (B[m##########################################################################[93m     (B[m######[K[24;75H(B[0;1m[38;5;235m[48;5;76m4[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  75 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m5:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  76 (B[m[46m[(B[mbar/mainbar-i3[46m](B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m6:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[22;6H[bar/mainbar-i3]
+[93m  77 (B[m;https://github.com/jaagr/polybar/wiki/Configuration[K[24;75H(B[0;1m[38;5;235m[48;5;76m7[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  78 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m8:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  79 (B[mmonitor = ${env:MONITOR}[K[24;75H(B[0;1m[38;5;235m[48;5;76m9:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  80 (B[m;monitor-fallback = HDMI1[K[24;74H(B[0;1m[38;5;235m[48;5;76m80[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  81 (B[mmonitor-strict = false[K[24;75H(B[0;1m[38;5;235m[48;5;76m1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  82 (B[moverride-redirect = false[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  83 (B[mbottom = false[K[24;75H(B[0;1m[38;5;235m[48;5;76m3[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  84 (B[mfixed-center = true[K[24;75H(B[0;1m[38;5;235m[48;5;76m4[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  85 (B[mwidth = 100%[K[24;75H(B[0;1m[38;5;235m[48;5;76m5[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  86 (B[mheight = 30[K[24;75H(B[0;1m[38;5;235m[48;5;76m6[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  87 (B[m;offset-x = 1%[K[24;75H(B[0;1m[38;5;235m[48;5;76m7[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  88 (B[m;offset-y = 1%[K
+[93m  89 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m8[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [24;69H[38;5;145m[48;5;240m4% (B[0;1m[38;5;235m[48;5;76m  89:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  90 (B[mbackground = ${colors.background}[K
+[93m  91 (B[mforeground = ${colors.foreground}[K[24;74H(B[0;1m[38;5;235m[48;5;76m90:1[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  92 (B[m[K
+[93m  93 (B[m; Background gradient (vertical steps)[K[24;75H(B[0;1m[38;5;235m[48;5;76m2:0[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m3:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  94 (B[m;   background-[0-9]+ = #aarrggbb[K
+[93m  95 (B[m;background-0 =[K[24;75H(B[0;1m[38;5;235m[48;5;76m4[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m5[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[2M[r[22;1H[93m  96 (B[m[K
+[93m  97 (B[mradius = 0.0[K[24;75H(B[0;1m[38;5;235m[48;5;76m6:0[22;6H[?25h[?25l[25;69H(B[mj[22;6H[?25h[?25l[25;69H [24;75H(B[0;1m[38;5;235m[48;5;76m7:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  98 (B[mline-size = 2[K[24;75H(B[0;1m[38;5;235m[48;5;76m8[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m  99 (B[mline-color = #000000[K[24;75H(B[0;1m[38;5;235m[48;5;76m9[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 100 (B[m[K[24;73H(B[0;1m[38;5;235m[48;5;76m100:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 101 (B[mborder-size = 0[K[24;75H(B[0;1m[38;5;235m[48;5;76m1:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 102 (B[m;border-left-size = 25[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 103 (B[m;border-right-size = 25[K[24;75H(B[0;1m[38;5;235m[48;5;76m3[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 104 (B[m;border-top-size = 0[K[24;75H(B[0;1m[38;5;235m[48;5;76m4[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 105 (B[m;border-bottom-size = 25[K[24;75H(B[0;1m[38;5;235m[48;5;76m5[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 106 (B[mborder-color = #000000[K[24;75H(B[0;1m[38;5;235m[48;5;76m6[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 107 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m7:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 108 (B[mpadding-left = 1[K[24;75H(B[0;1m[38;5;235m[48;5;76m8:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 109 (B[mpadding-right = 1[K[24;75H(B[0;1m[38;5;235m[48;5;76m9[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 110 (B[m[K[24;74H(B[0;1m[38;5;235m[48;5;76m10:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 111 (B[mmodule-margin-left = 3[K[24;75H(B[0;1m[38;5;235m[48;5;76m1:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 112 (B[mmodule-margin-right = 3[K[24;69H[38;5;145m[48;5;240m5% (B[0;1m[38;5;235m[48;5;76m 112[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 113 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m3:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 114 (B[m;https://github.com/jaagr/polybar/wiki/Fonts[K[24;75H(B[0;1m[38;5;235m[48;5;76m4:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 115 (B[mfont-0 = "Noto Sans:size=10;0"[K[24;75H(B[0;1m[38;5;235m[48;5;76m5[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 116 (B[mfont-1 = "FontAwesome:size=10;0"[K[24;75H(B[0;1m[38;5;235m[48;5;76m6[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 117 (B[mfont-2 = "Noto Sans:size=10;0"[K[24;75H(B[0;1m[38;5;235m[48;5;76m7[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 118 (B[mfont-3 = "Noto Sans Mono:size=10;0"[K[24;75H(B[0;1m[38;5;235m[48;5;76m8[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 119 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m9:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 120 (B[mmodules-left = i3 xwindow[K[24;74H(B[0;1m[38;5;235m[48;5;76m20:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 121 (B[mmodules-center = kernel[K[24;75H(B[0;1m[38;5;235m[48;5;76m1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 122 (B[mmodules-right = memory2 cpu2 date[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 123 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m3:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 124 (B[mseparator = |[K[24;75H(B[0;1m[38;5;235m[48;5;76m4:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 125 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m5:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 126 (B[m;dim-value = 1.0[K[24;75H(B[0;1m[38;5;235m[48;5;76m6:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 127 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m7:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 128 (B[mtray-detached = false[K[24;75H(B[0;1m[38;5;235m[48;5;76m8:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 129 (B[mtray-offset-x = 0[K[24;75H(B[0;1m[38;5;235m[48;5;76m9[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 130 (B[mtray-offset-y = 0[K[24;74H(B[0;1m[38;5;235m[48;5;76m30[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 131 (B[mtray-padding = 2[K[24;75H(B[0;1m[38;5;235m[48;5;76m1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 132 (B[mtray-maxsize = 20[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 133 (B[mtray-scale = 1.0[K[24;75H(B[0;1m[38;5;235m[48;5;76m3[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 134 (B[mtray-position = right[K[24;69H[38;5;145m[48;5;240m6% (B[0;1m[38;5;235m[48;5;76m 134[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 135 (B[mtray-background = ${colors.background}[K[24;75H(B[0;1m[38;5;235m[48;5;76m5[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 136 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m6:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 137 (B[m#i3: Make the bar appear below windows[K[24;75H(B[0;1m[38;5;235m[48;5;76m7:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 138 (B[m;wm-restack = i3[K[24;75H(B[0;1m[38;5;235m[48;5;76m8[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 139 (B[m;override-redirect = true[K[24;75H(B[0;1m[38;5;235m[48;5;76m9[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 140 (B[m[K[24;74H(B[0;1m[38;5;235m[48;5;76m40:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 141 (B[m; Enable support for inter-process messaging[K[24;75H(B[0;1m[38;5;235m[48;5;76m1:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 142 (B[m; See the Messaging wiki page for more details.[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 143 (B[menable-ipc = true[K[24;75H(B[0;1m[38;5;235m[48;5;76m3[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 144 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m4:0[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 145 (B[m; Fallback click handlers that will be called if[K[24;75H(B[0;1m[38;5;235m[48;5;76m5:1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 146 (B[m; there's no matching module handler found.[K[24;75H(B[0;1m[38;5;235m[48;5;76m6[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 147 (B[mclick-left =[K[24;75H(B[0;1m[38;5;235m[48;5;76m7[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 148 (B[mclick-middle =[K[24;75H(B[0;1m[38;5;235m[48;5;76m8[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 149 (B[mclick-right =[K[24;75H(B[0;1m[38;5;235m[48;5;76m9[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 150 (B[mscroll-up = i3wm-wsnext[K[24;74H(B[0;1m[38;5;235m[48;5;76m50[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 151 (B[mscroll-down = i3wm-wsprev[K[24;75H(B[0;1m[38;5;235m[48;5;76m1[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 152 (B[mdouble-click-left =[K[24;75H(B[0;1m[38;5;235m[48;5;76m2[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 153 (B[mdouble-click-middle =[K[24;75H(B[0;1m[38;5;235m[48;5;76m3[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 154 (B[mdouble-click-right =[K[24;75H(B[0;1m[38;5;235m[48;5;76m4[23;6H[?25h[?25l[25;69H(B[mj[23;6H[?25h[?25l[25;69H [1;23r[H[M[r[23;1H[93m 155 (B[m[K[24;75H(B[0;1m[38;5;235m[48;5;76m5:0[23;6H[?25h[1;31merror: [0mtray: Failed to put tray above 0x3e00002 in the stack (XCB_MATCH (8))[0m
+[?25l(B[m[H[2J[24B                                                                               [A                                                                               
+                                                                               [H[93m 132 (B[mtray-maxsize = 20
+[93m 133 (B[mtray-scale = 1.0
+[93m 134 (B[mtray-position = right
+[93m 135 (B[mtray-background = ${colors.background}
+[93m 136 
+ 137 (B[m#i3: Make the bar appear below windows
+[93m 138 (B[m;wm-restack = i3
+[93m 139 (B[m;override-redirect = true
+[93m 140 
+ 141 (B[m; Enable support for inter-process messaging
+[93m 142 (B[m; See the Messaging wiki page for more details.
+[93m 143 (B[menable-ipc = true
+[93m 144 
+ 145 (B[m; Fallback click handlers that will be called if
+[93m 146 (B[m; there's no matching module handler found.
+[93m 147 (B[mclick-left =
+[93m 148 (B[mclick-middle =
+[93m 149 (B[mclick-right =
+[93m 150 (B[mscroll-up = i3wm-wsnext
+[93m 151 (B[mscroll-down = i3wm-wsprev
+[93m 152 (B[mdouble-click-left =
+[93m 153 (B[mdouble-click-middle =
+[93m 154 (B[mdouble-click-right =
+[93m 155 
+(B[0;1m[38;5;235m[48;5;76m NORMAL (B[m[38;5;145m[48;5;240m config (B[m[38;5;145m[48;5;235m                            unix | utf-8 | no ft (B[m[38;5;145m[48;5;240m   6% (B[0;1m[38;5;235m[48;5;76m 155:0  (B[m
+[J[24;6H[?25h[?25l]112[2 q]112[2 q[?25h[1;33mwarn: [0mSystray selection already managed (window=0x260000c)[0m
+[?25l[H[2J[93m 133 (B[mtray-scale = 1.0
+[93m 134 (B[mtray-position = right
+[93m 135 (B[mtray-background = ${colors.background}
+[93m 136 
+ 137 (B[m#i3: Make the bar appear below windows
+[93m 138 (B[m;wm-restack = i3
+[93m 139 (B[m;override-redirect = true
+[93m 140 
+ 141 (B[m; Enable support for inter-process messaging
+[93m 142 (B[m; See the Messaging wiki page for more details.
+[93m 143 (B[menable-ipc = true
+[93m 144 
+ 145 (B[m; Fallback click handlers that will be called if
+[93m 146 (B[m; there's no matching module handler found.
+[93m 147 (B[mclick-left =
+[93m 148 (B[mclick-middle =
+[93m 149 (B[mclick-right =
+[93m 150 (B[mscroll-up = i3wm-wsnext
+[93m 151 (B[mscroll-down = i3wm-wsprev
+[93m 152 (B[mdouble-click-left =
+[93m 153 (B[mdouble-click-middle =
+[93m 154 (B[mdouble-click-right =
+[93m 155 
+(B[0;1m[38;5;235m[48;5;76m NORMAL (B[m[38;5;145m[48;5;240m config (B[m[38;5;145m[48;5;235m                            unix | utf-8 | no ft (B[m[38;5;145m[48;5;240m   6% (B[0;1m[38;5;235m[48;5;76m 155:0  (B[m
+[J[23;6H[?25h[?25l]112[2 q]112[2 q[?25h[1;33mwarn: [0mmodule/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)[0m
+[1;31merror: [0mmodule/i3: Failed to reconnect socket (reason: Failed to read header from socket 0x8: errno 104 (Connection reset by peer))[0m
+[1;33mwarn: [0mmodule/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)[0m
+[1;31merror: [0mmodule/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 111 (Connection refused))[0m
+[1;33mwarn: [0mmodule/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))[0m
+[1;31merror: [0mmodule/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 111 (Connection refused))[0m
+[1;33mwarn: [0mmodule/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))[0m
+[1;31merror: [0mmodule/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 111 (Connection refused))[0m
+[1;33mwarn: [0mmodule/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))[0m
+[1;31merror: [0mmodule/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 111 (Connection refused))[0m
+[1;31merror: [0mFailed to query _XEMBED_INFO, removing client... (XCB_WINDOW (3))[0m
+[1;33mwarn: [0mmodule/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))[0m
+[1;31merror: [0mmodule/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 111 (Connection refused))[0m
+[1;33mwarn: [0mmodule/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))[0m
+[?25l[H[2J[24B                                                                               [A                                                                               
+                                                                               [H[93m 132 (B[mtray-maxsize = 20
+[93m 133 (B[mtray-scale = 1.0
+[93m 134 (B[mtray-position = right
+[93m 135 (B[mtray-background = ${colors.background}
+[93m 136 
+ 137 (B[m#i3: Make the bar appear below windows
+[93m 138 (B[m;wm-restack = i3
+[93m 139 (B[m;override-redirect = true
+[93m 140 
+ 141 (B[m; Enable support for inter-process messaging
+[93m 142 (B[m; See the Messaging wiki page for more details.
+[93m 143 (B[menable-ipc = true
+[93m 144 
+ 145 (B[m; Fallback click handlers that will be called if
+[93m 146 (B[m; there's no matching module handler found.
+[93m 147 (B[mclick-left =
+[93m 148 (B[mclick-middle =
+[93m 149 (B[mclick-right =
+[93m 150 (B[mscroll-up = i3wm-wsnext
+[93m 151 (B[mscroll-down = i3wm-wsprev
+[93m 152 (B[mdouble-click-left =
+[93m 153 (B[mdouble-click-middle =
+[93m 154 (B[mdouble-click-right =
+[93m 155 
+(B[0;1m[38;5;235m[48;5;76m NORMAL (B[m[38;5;145m[48;5;240m config (B[m[38;5;145m[48;5;235m                            unix | utf-8 | no ft (B[m[38;5;145m[48;5;240m   6% (B[0;1m[38;5;235m[48;5;76m 155:0  (B[m
+[J[24;6H[?25h[?25l]112[2 q]112[2 q[?25h[?25l[H[2J[93m 132 (B[mtray-maxsize = 20
+[93m 133 (B[mtray-scale = 1.0
+[93m 134 (B[mtray-position = right
+[93m 135 (B[mtray-background = ${colors.background}
+[93m 136 
+ 137 (B[m#i3: Make the bar appear below windows
+[93m 138 (B[m;wm-restack = i3
+[93m 139 (B[m;override-redirect = true
+[93m 140 
+ 141 (B[m; Enable support for inter-process messaging
+[93m 142 (B[m; See the Messaging wiki page for more details.
+[93m 143 (B[menable-ipc = true
+[93m 144 
+ 145 (B[m; Fallback click handlers that will be called if
+[93m 146 (B[m; there's no matching module handler found.
+[93m 147 (B[mclick-left =
+[93m 148 (B[mclick-middle =
+[93m 149 (B[mclick-right =
+[93m 150 (B[mscroll-up = i3wm-wsnext
+[93m 151 (B[mscroll-down = i3wm-wsprev
+[93m 152 (B[mdouble-click-left =
+[93m 153 (B[mdouble-click-middle =
+[93m 154 (B[mdouble-click-right =
+[93m 155 
+(B[0;1m[38;5;235m[48;5;76m NORMAL (B[m[38;5;145m[48;5;240m config (B[m[38;5;145m[48;5;235m                            unix | utf-8 | no ft (B[m[38;5;145m[48;5;240m   6% (B[0;1m[38;5;235m[48;5;76m 155:0  (B[m
+[J[24;6H[?25h[?25l]112[2 q]112[2 q[?25h[1;33mwarn: [0mLost systray selection, deactivating...[0m
+[?25l[H[2J[93m 133 (B[mtray-scale = 1.0
+[93m 134 (B[mtray-position = right
+[93m 135 (B[mtray-background = ${colors.background}
+[93m 136 
+ 137 (B[m#i3: Make the bar appear below windows
+[93m 138 (B[m;wm-restack = i3
+[93m 139 (B[m;override-redirect = true
+[93m 140 
+ 141 (B[m; Enable support for inter-process messaging
+[93m 142 (B[m; See the Messaging wiki page for more details.
+[93m 143 (B[menable-ipc = true
+[93m 144 
+ 145 (B[m; Fallback click handlers that will be called if
+[93m 146 (B[m; there's no matching module handler found.
+[93m 147 (B[mclick-left =
+[93m 148 (B[mclick-middle =
+[93m 149 (B[mclick-right =
+[93m 150 (B[mscroll-up = i3wm-wsnext
+[93m 151 (B[mscroll-down = i3wm-wsprev
+[93m 152 (B[mdouble-click-left =
+[93m 153 (B[mdouble-click-middle =
+[93m 154 (B[mdouble-click-right =
+[93m 155 
+(B[0;1m[38;5;235m[48;5;76m NORMAL (B[m[38;5;145m[48;5;240m config (B[m[38;5;145m[48;5;235m                            unix | utf-8 | no ft (B[m[38;5;145m[48;5;240m   6% (B[0;1m[38;5;235m[48;5;76m 155:0  (B[m
+[J[23;6H[?25h[?25l]112[2 q]112[2 q[?25h[1;34mnotice: [0mTermination signal received, shutting down...[0m
+[1;33mwarn: [0mmodule/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)[0m
+[?25l[H[2J[24B                                                                               [A                                                                               
+                                                                               [H[93m 132 (B[mtray-maxsize = 20
+[93m 133 (B[mtray-scale = 1.0
+[93m 134 (B[mtray-position = right
+[93m 135 (B[mtray-background = ${colors.background}
+[93m 136 
+ 137 (B[m#i3: Make the bar appear below windows
+[93m 138 (B[m;wm-restack = i3
+[93m 139 (B[m;override-redirect = true
+[93m 140 
+ 141 (B[m; Enable support for inter-process messaging
+[93m 142 (B[m; See the Messaging wiki page for more details.
+[93m 143 (B[menable-ipc = true
+[93m 144 
+ 145 (B[m; Fallback click handlers that will be called if
+[93m 146 (B[m; there's no matching module handler found.
+[93m 147 (B[mclick-left =
+[93m 148 (B[mclick-middle =
+[93m 149 (B[mclick-right =
+[93m 150 (B[mscroll-up = i3wm-wsnext
+[93m 151 (B[mscroll-down = i3wm-wsprev
+[93m 152 (B[mdouble-click-left =
+[93m 153 (B[mdouble-click-middle =
+[93m 154 (B[mdouble-click-right =
+[93m 155 
+(B[0;1m[38;5;235m[48;5;76m NORMAL (B[m[38;5;145m[48;5;240m config (B[m[38;5;145m[48;5;235m                            unix | utf-8 | no ft (B[m[38;5;145m[48;5;240m   6% (B[0;1m[38;5;235m[48;5;76m 155:0  (B[m
+[J[24;6H[?25h[?25l]112[2 q]112[2 q[?25h[?25l[26;69H:[24;6H[?25h[?25l[26;69H [26;1H:[A(B[0;1m[38;5;235m[48;5;76mCOMMAND (B[m[38;5;145m[48;5;240m config ]112[2 q[26;2H[?25h[?25l(B[mq[?25h[?25l[26;1H[?25h[?25l]112[2 q[?25h[?25l]112[2 q(B[m[?25h[?1l>[?1049l[23;0;0t[23;0t[?2004l[?1004l[?25h[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[32mr[39m[39m [4ms[24m[24m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m [1m[31mp[0m[39m[1m[31mp[1m[31ma[0m[39m[1m[31ma[1m[31mc[0m[39m[1m[31mc[1m[31mm[0m[39m[1m[31mm[1m[31ma[0m[39m[0m[32mp[0m[32ma[0m[32mc[0m[32mm[0m[32ma[32mn[39m -S pacman     ywall [?1l>[?2004l
+]2;sudo pacman -S pywal]1;pacman[sudo] password for talongi: 
+[1;31merror: [0mtarget not found: pywal
+[?25l[?25h[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m [31m✘[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[4m[32msudo[24m[39m [32mpacman[39m -S pywal[1Cpywalypywaltpywalhpywalopywalnpywal-pywal[?1l>[?2004l
+]2;sudo pacman -S python-pywal]1;pacman[?25lresolving dependencies...
+looking for conflicting packages...
+
+[0;1mPackage (1)           [0m  [0;1mNew Version[0m  [0;1mNet Change[0m  [0;1mDownload Size[0m
+
+community/python-pywal  3.3.0-3        0.26 MiB       0.08 MiB
+
+[0;1mTotal Download Size: [0m  0.08 MiB
+[0;1mTotal Installed Size:[0m  0.26 MiB
+
+[1;34m::[0;1m Proceed with installation? [Y/n] [0m[?25hy
+[?25l[1;34m::[0;1m Retrieving packages...
+[0m python-pywal-3.3.0-3-any
+[1F python-pywal-3.3...    22.0 KiB  0.00   B/s --:-- [-----[1;33mC[m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m]  27% python-pywal-3.3...    81.1 KiB   392 KiB/s 00:00 [---------------------] 100%[1E(0/1) checking keys in keyring                     [[1;33mc[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m]   0%(1/1) checking keys in keyring                     [---------------------] 100%
+(0/1) checking package integrity                   [[1;33mc[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m]   0%(1/1) checking package integrity                   [---------------------] 100%
+(0/1) loading package files                        [[1;33mc[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m]   0%(1/1) loading package files                        [---------------------] 100%
+(0/1) checking for file conflicts                  [[1;33mc[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m]   0%(1/1) checking for file conflicts                  [---------------------] 100%
+(0/1) checking available disk space                [[1;33mc[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m]   0%(1/1) checking available disk space                [---------------------] 100%
+[1;34m::[0;1m Processing package changes...
+[0m(1/1) installing python-pywal                      [[1;33mc[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m[0;37mo[m[0;37m [m[0;37m [m]   0%(1/1) installing python-pywal                      [---------------------] 100%
+Optional dependencies for python-pywal
+[0;1m   [0m feh: set wallpaper [installed]
+    nitrogen: set wallpaper [installed]
+    python2: reload gtk2 themes on the fly [installed]
+[1;34m::[0;1m Running post-transaction hooks...
+[0m(1/1) Arming ConditionNeedsUpdate...
+[?25h[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[32ml[39m[32ml[32ms[39m[?1l>[?2004l
+]2;exa --icons]1;ls config  [32m [1mlaunch.sh[0m  [34m [1mscripts[0m
+[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[32mn[39m[1m[31mn[1m[31me[0m[39m[1m[31mn[1m[31me[1m[31mo[0m[39m[1m[31mo[1m[31mf[0m[39m[1m[31mf[1m[31me[0m[39m[1m[31me[1m[31mt[0m[39m[1m[31mt[1m[31mc[0m[39m[0m[32mn[0m[32me[0m[32mo[0m[32mf[0m[32me[0m[32mt[0m[32mc[32mh[39m[?1l>[?2004l
+]2;neofetch]1;neofetch[?25l[?7l[0m[34m[1m                    /-
+                   ooo:
+                  yoooo/
+                 yooooooo
+                yooooooooo
+               yooooooooooo
+             .yooooooooooooo
+            .oooooooooooooooo
+           .oooooooarcoooooooo
+          .ooooooooo-oooooooooo
+         .ooooooooo-  oooooooooo
+        :ooooooooo.    :ooooooooo
+       :ooooooooo.      :ooooooooo
+      :oooarcooo         .oooarcooo
+     :ooooooooy           .ooooooooo
+    :ooooooooo   [37m[0m[1m/ooooooooooooooooooo[0m[34m[1m
+   :ooooooooo      [37m[0m[1m.-ooooooooooooooooo.[0m[34m[1m
+  ooooooooo-             [37m[0m[1m-ooooooooooooo.[0m[34m[1m
+ ooooooooo-                 [37m[0m[1m.-oooooooooo.[0m[34m[1m
+ooooooooo.                     [37m[0m[1m-ooooooooo[0m[34m[1m[0m
+[20A[9999999D[44C[0m[1m[0m[1mtalongi[0m@[0m[1mzephyrus[0m 
+[44C[0m----------------[0m 
+[44C[0m[34m[1mOS[0m[0m:[0m ArcoLinux[0m 
+[44C[0m[34m[1mKernel[0m[0m:[0m 5.14.2-arch1-2[0m 
+[44C[0m[34m[1mUptime[0m[0m:[0m 18 hours, 30 mins[0m 
+[44C[0m[34m[1mPackages[0m[0m:[0m 1219 (pacman)[0m 
+[44C[0m[34m[1mShell[0m[0m:[0m zsh 5.8[0m 
+[44C[0m[34m[1mResolution[0m[0m:[0m 2560x1440[0m 
+[44C[0m[34m[1mWM[0m[0m:[0m i3[0m 
+[44C[0m[34m[1mTheme[0m[0m:[0m Arc-Dark [GTK2/3][0m 
+[44C[0m[34m[1mIcons[0m[0m:[0m Sardi-Arc [GTK2/3][0m 
+[44C[0m[34m[1mTerminal[0m[0m:[0m script[0m 
+[44C[0m[34m[1mCPU[0m[0m:[0m AMD Ryzen 9 4900HS with Radeon Graphics (16) @ 2.994GHz[0m 
+[44C[0m[34m[1mGPU[0m[0m:[0m 00:0f.0 VMware SVGA II Adapter[0m 
+[44C[0m[34m[1mMemory[0m[0m:[0m 2871MiB / 32075MiB (8%)[0m 
+
+[44C[30m[40m   [31m[41m   [32m[42m   [33m[43m   [34m[44m   [35m[45m   [36m[46m   [37m[47m   [m
+[44C[38;5;8m[48;5;8m   [38;5;9m[48;5;9m   [38;5;10m[48;5;10m   [38;5;11m[48;5;11m   [38;5;12m[48;5;12m   [38;5;13m[48;5;13m   [38;5;14m[48;5;14m   [38;5;15m[48;5;15m   [m
+
+
+
+[?25h[?7h[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[32mw[39m[1m[31mw[1m[31ma[0m[39m[0m[32mw[39m[0m[39m [39m [32mr[39m[?1l>[?2004l
+]2;ranger]1;r[?1049h[22;0;0t[1;26r(B[m[4l[?7h[?1h=[?25l[39;49m[?1006;1000h[39;49m(B[m[H[2J
+[J[Aloading...[Kkranger\[?1h=[?1006;1000hkranger\(B[0;1m[32mtalongi@zephyrus [34m/home/talongi/.config/polybar/[39mscripts[K
+[91m [94m Kvantum      [39m(B[m (B[0;1;7m[94m  scripts             9 [39m(B[m ...
+(B[0;1m[91m [94m libfm        [39m(B[m (B[0;1m[91m (B[0m config[3;36H56.6 K
+(B[0;1m[91m [94m matplotlib   [39m(B[m (B[0;1m[91m [92m launch.sh      5.67 K 
+[91m [94m mpv          
+[91m [94m msmtp        
+[91m [94m nano         
+[91m [94m ncmpcpp      
+[91m [94m neofetch     
+[91m [94m nitrogen     
+[91m [94m nnn          
+[91m [94m nomacs       
+[91m [94m nvim         
+[91m [94m pamac        
+[91m [94m paru         
+[91m [94m pcmanfm      
+(B[0;1;7m[94m  polybar      
+(B[0;1m[91m [94m pulse        
+[91m [94m qt5ct        
+[91m [94m qutebrowser  
+[91m [94m ranger       
+[91m [94m ristretto    
+[91m [94m rofi         
+[91m [94m Slack        
+[91m [94m spyder-py3   
+(B[0m[36mdrwxr-xr-x[39m 2 talongi talongi 9 2021-07-22 12:31 62.2K sum, 4.16G free  1/3  Al[?7ll[?7h[1;11H(B[m[2;18H[2;44H(B[0;1;7m[92m  check-arch-updates.sh            [3;44H(B[0;1m[91m [92m check-aur-updates.sh[K[4;44H[91m [92m get_spotify_status.sh[K[5;44H[91m [92m pavolume.sh[K[6;44H[91m [92m pub-ip.sh[K[7;44H[91m [92m scroll_spotify_status.sh[K[8;44H[91m [92m spotify1.sh[K[9;44H[91m [92m tempcores.sh[K[10;44H[91m (B[0m weather.py[2;18H(B[m[1;78H(B[0;1mg
+(B[0;4mkey          command                                                           [3;1H(B[0m L           cd -r %f[K
+ l           cd -r .[K
+ /           cd /[K
+ r           cd /[K
+ d           cd /dev[K
+ e           cd /etc[K
+ m           cd /media[K
+ M           cd /mnt[K
+ s           cd /srv
+ u           cd /usr
+ ?           cd /usr/share/doc/ranger
+ v           cd /var
+ h           cd ~
+ c           cd ~/.config
+ p           cd ~/Gypsy/Project/
+ z           cd ~/Zephyrus_share
+ o           cd ~/Zephyrus_share/Org
+ P           cd ~/Zephyrus_share/Pictures
+ i           eval fm.cd('/run/media/' + os.getenv('USER'))
+ R           eval fm.cd(ranger.RANGERDIR)
+ g           move to=0
+ q           tab_close
+ T           tab_move -1[2;18H(B[m[1;32H(B[0;1m[34mZephyrus_share/Pictures/[39mOrg[K
+[91m [94m Cascadia     [39m(B[m (B[0;1;7m[94m  Org                 7 [39m(B[m ...(B[m[K
+(B[0;1m[91m [94m Costa_Rica   [39m(B[m (B[0;1m[91m [94m Screenshots        47 
+[91m [94m Meeting_notes[39m(B[m (B[0;1m[91m [94m TEST[16X[4;41H0 
+[91m [94m Mother       [39m(B[m (B[0;1m[91m [94m Wallpapers        149 
+[91m [94m Obliquity    [39m(B[m (B[0;1m[91m (B[0m[33m katie_draw~.png 198 K 
+(B[0;1m[91m [94m Org          [39m(B[m (B[0;1m[91m (B[0m[33m peaceful_~.jpg 60.3 K 
+(B[0;1m[91m [94m Papers       [39m(B[m (B[0;1m[91m [92m rm_low_res.py   455 B 
+[91m [94m Peer_reviews [39m(B[m (B[0;1m[91m [92m rm_low_res~.org 925 B 
+(B[0;1;7m[94m  Pictures     [39m(B[m (B[0;1m[91m (B[0m[33m sammy_slug.png  170 K 
+(B[0;1m[91m [94m Python_codes [39m(B[m (B[0;1m[91m [92m Screenshots_000 742 K 
+[91m [94m Python_packa~[39m(B[m (B[0;1m[91m (B[0m[33m uc_slug.jpg    19.7 K 
+(B[0;1m[91m [94m School       [39m(B[m (B[0;1m[91m [92m wallpaper_~.txt 6.7 K 
+[91m [94m sioseis-20~.0[39m(B[m[K
+(B[0;1m[91m [94m Travel       [39m(B[m[K
+(B[0;1m[91m [94m travisalo~.io[39m(B[m[K
+(B[0;1m[91m [94m Web_page_ucs~[39m(B[m[K
+(B[0;1m[91m [92m Immuniza~.pdf[39m(B[m[K
+(B[0;1m[91m [92m Please_D~.pdf[39m(B[m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[35mdrwxrwxrwx[39m 1 root root 7 2021-08-26 12:15       1.17M[60G545G free  1/12[2;18H(B[m[2;44H(B[0;7m[33m  irwin_barns.png                  [3;44H(B[0;1m[91m (B[0m[33m mag_vs_area.png[K[4;44H(B[0;1m[91m (B[0m[33m Ms_vs_Mo.png[K[5;44H(B[0;1m[91m [92m README.org[K[6;44H[91m (B[0m[33m shelf_oskin.png[K[7;44H(B[0;1m[91m (B[0m[33m vergence.png[K[8;44H(B[0;1m[91m (B[0m[33m watts_brothers.png[K[2;18H[39m(B[m[1;56H(B[0;1mScreenshots[2;18H[91m [94m Org[17X[2;41H7 [39m(B[m ...(B[m[K[3;18H(B[0;1;7m[94m  Screenshots        47 [39m(B[m[K
+ [K
+[K
+[K
+[K
+[K[26;24H47 2021-09-15 12:11[26;71H2[2;18H(B[m
+[2;44H(B[0;7m[33m  2021-09-15-121137_1617x964_s~.png[3;44H(B[0;1m[91m (B[0m[33m 2021_sparker_1.PNG[K[4;44H(B[0;1m[91m (B[0m[33m 2021_sparker_line10_vs_3d.png[K[5;44H(B[0;1m[91m (B[0m[33m 2021_sparker_line10_vs_3d_2.PNG[K[6;44H(B[0;1m[91m (B[0m[33m 2021_sparker_line10_vs_3d_3.PNG[K[7;44H(B[0;1m[91m (B[0m[33m 2021_sparker_line15_vs_3d_1.PNG[K[8;44H(B[0;1m[91m (B[0m[33m 2021_sparker_line15_vs_3d_hi~.jpg[9;44H(B[0;1m[91m (B[0m[33m 2021_sparker_line15_vs_3d_ho~.PNG[10;44H(B[0;1m[91m (B[0m[33m 2021_sparker_line15_vs_3d_ve~.PNG[11;44H(B[0;1m[91m (B[0m[33m 2021_sparker_wc80_vs_3d_simi~.png[12;44H(B[0;1m[91m (B[0m[33m all_hor_chev_w_tfl_L1108.PNG[K[13;44H(B[0;1m[91m (B[0m[33m all_hor_shell_w_tfl.png[K[14;44H(B[0;1m[91m (B[0m[33m basement_bool_fix1.PNG[K[15;44H(B[0;1m[91m (B[0m[33m basement_bool_fix2.PNG[K[16;44H(B[0;1m[91m (B[0m[33m faults_basement_horizons_5mi~.PNG[17;44H(B[0;1m[91m (B[0m[33m horizons_debug_shallow_mediu~.png[18;44H(B[0;1m[91m (B[0m[33m mt_depth_investigation.png[K[19;44H(B[0;1m[91m (B[0m[33m mt_instruments.png[K[20;44H(B[0;1m[91m (B[0m[33m pico_mohnian_hor_welll2.PNG[K[21;44H(B[0;1m[91m (B[0m[33m pico_mohnian_hor_welll3.PNG[K[22;44H(B[0;1m[91m (B[0m[33m pico_mohnian_hor_welll4.PNG[K[23;44H(B[0;1m[91m (B[0m[33m pico_mohnian_hor_welll5.PNG[K[24;44H(B[0;1m[91m (B[0m[33m pico_mohnian_hor_wells1.PNG[K[25;44H(B[0;1m[91m (B[0m[33m rep2base_bool_test1.png[K[3;18H[39m(B[m[1;56H(B[0;1mTEST[K[2;44H(B[0m...(B[m[K[3;18H(B[0;1m[91m [94m Screenshots        47 [39m(B[m[K[4;18H(B[0;1;7m[94m  TEST                0 [39m(B[m[K
+ [K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[26;24H0 2021-08-30 13:27 [26;71H3[3;18H(B[m
+[2;44H[41mempty[4;18H[49m(B[m[1;56H(B[0;1mWallpapers[2;44H(B[0m...(B[m[K[4;18H(B[0;1m[91m [94m TEST[16X[4;41H0 [5;18H(B[0;1;7m[94m  Wallpapers        149 [26;24H(B[0m149 2021-09-15 15:45[26;71H4[4;18H(B[m
+[1;78H(B[0;1m/[26d(B[0m[44mdrwxrwxrwx 1 root root[5;18H[49m(B[m[1;78H(B[0;1m-[26;23H(B[0m[44m 149 2021-09-15 15:45  [5;18H[49m(B[m[1;78H(B[0;1m\[26;46H(B[0m[44m   1.17M sum, 545G f[5;18H[49m(B[m[1;78H(B[0;1m [2;44H(B[0;7m[33m  0002.jpg                         [3;44H(B[0;1m[91m (B[0m[33m 2xmq6ld1xlc71.jpg[K[4;44H(B[0;1m[91m (B[0m[33m 0003.jpg[K[5;44H(B[0;1m[91m (B[0m[33m 3xfl82pbjfc71.jpg[K[6;44H(B[0;1m[91m (B[0m[33m 5l7zj92y0e771.jpg[K[7;44H(B[0;1m[91m (B[0m[33m 5p7bm0iy5hb71.jpg[K[8;44H(B[0;1m[91m (B[0m[33m 6kx7shz10e771.jpg[K[9;44H(B[0;1m[91m [92m 6SfyeTYFJSlWXhYM4polvgDVbi0~.webp[10;44H[91m (B[0m[33m 6thz2qsgj3j71.png[K[11;44H(B[0;1m[91m (B[0m[33m 7zoo3pzevgk71.png[K[12;44H(B[0;1m[91m (B[0m[33m 0008.jpg[K[13;44H(B[0;1m[91m (B[0m[33m 8w1qoej75hk71.jpg[K[14;44H(B[0;1m[91m (B[0m[33m 0016.jpg[K[15;44H(B[0;1m[91m (B[0m[33m 0017.jpg[K[16;44H(B[0;1m[91m (B[0m[33m 0023.jpg[K[17;44H(B[0;1m[91m (B[0m[33m 0024.jpg[K[18;44H(B[0;1m[91m (B[0m[33m 0028.jpg[K[19;44H(B[0;1m[91m (B[0m[33m 0032.jpg[K[20;44H(B[0;1m[91m (B[0m[33m 0036.jpg[K[21;44H(B[0;1m[91m (B[0m[33m 0038.jpg[K[22;44H(B[0;1m[91m (B[0m[33m 0040.jpg[K[23;44H(B[0;1m[91m (B[0m[33m 0048.jpg[K[24;44H(B[0;1m[91m (B[0m[33m 0052.jpg[K[25;44H(B[0;1m[91m (B[0m[33m 0054.jpg[K
+[35mdrwxrwxrwx[39m 1 root root 149 2021-09-15 15:45     1.17M sum, 545G f[5;18H(B[m[1;56H(B[0;1m[34mWallpapers/[39m0002.jpg
+[4G[94mOrg     [18G(B[0;1;7m[33m  0002.jpg        2.5 M [39m(B[m[K
+[4G(B[0;1m[94mScreenshots  [39m(B[m (B[0;1m[91m (B[0m[33m 2xmq6ld1x~.jpg 2.33 M [39m(B[m[K
+[4G(B[0;1m[94mTEST         [39m(B[m (B[0;1m[91m (B[0m[33m 0003.jpg       1.66 M [39m(B[m[K
+(B[0;1;7m[94m  Wallpapers   [39m(B[m (B[0;1m[91m (B[0m[33m 3xfl82pbj~.jpg 3.37 M [39m(B[m[K
+[C[33m katie_dr~.png[39m(B[m (B[0;1m[91m (B[0m[33m 5l7zj92y0~.jpg 5.75 M [39m(B[m[K
+[C[33m peaceful~.jpg[39m(B[m (B[0;1m[91m (B[0m[33m 5p7bm0iy5h~.jpg 598 K [39m(B[m[K
+[C(B[0;1m[92m rm_low_res.py[39m(B[m (B[0;1m[91m (B[0m[33m 6kx7shz10e~.jpg 637 K [39m(B[m[K
+[C(B[0;1m[92m rm_low_r~.org[39m(B[m (B[0;1m[91m [92m 6SfyeTYFJ~.webp 205 K [39m(B[m[K
+(B[0;1m[91m (B[0m[33m sammy_sl~.png[39m(B[m (B[0;1m[91m (B[0m[33m 6thz2qsgj3~.png 165 K [39m(B[m[K
+[C(B[0;1m[92m Screenshots_~[39m(B[m (B[0;1m[91m (B[0m[33m 7zoo3pzev~.png 10.1 M [39m(B[m[K
+[C[33m uc_slug.jpg  [39m(B[m (B[0;1m[91m (B[0m[33m 0008.jpg       1.49 M [39m(B[m[K
+[C(B[0;1m[92m wallpape~.txt[39m(B[m (B[0;1m[91m (B[0m[33m 8w1qoej75h~.jpg 986 K [39m(B[m[K[14;17H[1K (B[0;1m[91m (B[0m[33m 0016.jpg       5.53 M [39m(B[m[K[15;17H[1K (B[0;1m[91m (B[0m[33m 0017.jpg        836 K [39m(B[m[K[16;17H[1K (B[0;1m[91m (B[0m[33m 0023.jpg       1.26 M [39m(B[m[K[17;17H[1K (B[0;1m[91m (B[0m[33m 0024.jpg       2.93 M [39m(B[m[K[18;17H[1K (B[0;1m[91m (B[0m[33m 0028.jpg       1.33 M [39m(B[m[K[19;17H[1K (B[0;1m[91m (B[0m[33m 0032.jpg       1.88 M [39m(B[m[K[20;18H(B[0;1m[91m (B[0m[33m 0036.jpg       1.72 M [39m(B[m[K[21;18H(B[0;1m[91m (B[0m[33m 0038.jpg       1.13 M [39m(B[m[K[22;18H(B[0;1m[91m (B[0m[33m 0040.jpg       1.15 M [39m(B[m[K[23;18H(B[0;1m[91m (B[0m[33m 0048.jpg        832 K [39m(B[m[K[24;18H(B[0;1m[91m (B[0m[33m 0052.jpg       1.51 M [39m(B[m[K[25;18H(B[0;1m[91m (B[0m[33m 0054.jpg        494 K [39m(B[m[K
+[35m-[26;24H[39m2.5M 2021-06-30 14:40    307M sum, 545G free  1/149  To[?7lp[?7h[5;18H(B[m[2d[1;78H(B[0;1m/[2;18H(B[m[1;78H(B[0;1m-[2;18H(B[m[1;78H(B[0;1m\[2;18H(B[m[1;78H(B[0;1m|[2;18H(B[m[1;78H(B[0;1m/[2;18H(B[m[1;78H(B[0;1m [2;18H(B[m[H(B[0;1m[32mtalongi@zephyrus [34m/home/talongi/Zephyrus_share/Pictures/Wallpapers/[39m0002.jpg   o[K
+[91m [94m Org          [39m(B[m (B[0;1;7m[33m  0002.jpg        2.5 M [39m(B[m[K
+(B[0;1m[91m [94m Screenshots  [39m(B[m (B[0;1m[91m (B[0m[33m 2xmq6ld1x~.jpg 2.33 M [39m(B[m[K
+(B[0;1m[91m [94m TEST         [39m(B[m (B[0;1m[91m (B[0m[33m 0003.jpg       1.66 M [39m(B[m[K
+(B[0;1;7m[94m  Wallpapers   [39m(B[m (B[0;1m[91m (B[0m[33m 3xfl82pbj~.jpg 3.37 M [39m(B[m[K
+(B[0;1m[91m (B[0m[33m katie_dr~.png[39m(B[m (B[0;1m[91m (B[0m[33m 5l7zj92y0~.jpg 5.75 M [39m(B[m[K
+(B[0;4mkey          command                                                           [8;1H(B[0m a           chain set sort=atime;     set sort_reverse=False[K
+ A           chain set sort=atime;     set sort_reverse=True[K
+ b           chain set sort=basename;  set sort_reverse=False[K
+ B           chain set sort=basename;  set sort_reverse=True[K
+ c           chain set sort=ctime;     set sort_reverse=False[K
+ C           chain set sort=ctime;     set sort_reverse=True[K
+ e           chain set sort=extension; set sort_reverse=False[K
+ E           chain set sort=extension; set sort_reverse=True[K
+ m           chain set sort=mtime;     set sort_reverse=False[K
+ M           chain set sort=mtime;     set sort_reverse=True[K
+ n           chain set sort=natural;   set sort_reverse=False[K
+ N           chain set sort=natural;   set sort_reverse=True[K
+ s           chain set sort=size;      set sort_reverse=False[K
+ S           chain set sort=size;      set sort_reverse=True[K
+ t           chain set sort=type;      set sort_reverse=False[K
+ T           chain set sort=type;      set sort_reverse=True[K
+ z           set sort=random[K
+ r           set sort_reverse![K
+[35m-rwxrwxrwx[39m 1 root root 2.5M 2021-06-30 14:40    307M sum, 545G free  1/149  To[?7lp[?7h[2;18H(B[m[1;78H(B[0;1m 
+(B[0;1;7m[94m  Wallpapers   [39m(B[m (B[0;1m[91m (B[0m[33m 0269.jpg        943 K [3;21H0270.jpg        586 K[4;22H271[4;36H 624 K
+(B[0;1m[91m [94m Org          [39m(B[m (B[0;1m[91m (B[0m[33m 0272.jpg       4.4
+[C(B[0;1m[92m Screenshots_~[39m(B[m (B[0;1m[91m (B[0m[33m 0273.jpg       3.38
+(B[0;1m[91m [92m rm_low_res.py[39m(B[m (B[0;1m[91m (B[0m[33m 0274.jpg       3.89 M [39m(B[m[K
+(B[0;1m[91m [92m rm_low_r~.org[39m(B[m (B[0;1m[91m (B[0m[33m 0275.jpg       5.41 M [39m(B[m[K
+(B[0;1m[91m [92m wallpape~.txt[39m(B[m (B[0;1m[91m (B[0m[33m 0276.jpg       1.38 M [39m(B[m[K
+(B[0;1m[91m (B[0m[33m katie_dr~.png[39m(B[m (B[0;1m[91m (B[0m[33m 0278.jpg       1.94 M [39m(B[m[K
+(B[0;1m[91m (B[0m[33m uc_slug.jpg  [39m(B[m (B[0;1m[91m (B[0m[33m 0282.jpg       1.16 M [39m(B[m[K
+(B[0;1m[91m (B[0m[33m peaceful~.jpg[39m(B[m (B[0;1m[91m (B[0m[33m 0291.jpg       5.44 M [39m(B[m[K
+(B[0;1m[91m (B[0m[33m sammy_sl~.png[39m(B[m (B[0;1m[91m (B[0m[33m 0292.jpg        5.5 M [39m(B[m[K[14;17H[1K (B[0;1m[91m (B[0m[33m 0293.jpg       1.34 M [39m(B[m[K[15;17H[1K (B[0;1m[91m (B[0m[33m 0296.jpg       3.16 M [39m(B[m[K[16;17H[1K (B[0;1m[91m [92m README.md       1.3 K [39m(B[m[K[17;17H[1K (B[0;1;7m[33m  0002.jpg        2.5 M [39m(B[m[K[18;17H[1K (B[0;1m[91m (B[0m[33m 0003.jpg       1.66 M [39m(B[m[K[19;17H[1K (B[0;1m[91m (B[0m[33m 0008.jpg       1.49 M [39m(B[m[K[20;17H[1K (B[0;1m[91m (B[0m[33m 6kx7shz10e~.jpg 637 K [39m(B[m[K[21;17H[1K (B[0;1m[91m (B[0m[33m likkxmvfxg~.jpg 911 K [39m(B[m[K[22;17H[1K (B[0;1m[91m (B[0m[33m bk4ipcmq4k~.jpg 667 K [39m(B[m[K[23;17H[1K (B[0;1m[91m (B[0m[33m 5l7zj92y0~.jpg 5.75 M [39m(B[m[K[24;17H[1K (B[0;1m[91m [92m lemons          812 K [25;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m t7y82t978~.png 7.59 M [2;18H[39m(B[m[17;18H[H(B[0;1m[32mtalongi@zephyrus [34m/home/talongi/Zephyrus_share/Pictures/Wallpapers/[39m0002.jpg   g[K
+(B[0;4mkey          command                                                           [3;1H(B[0m L           cd -r %f[K
+ l           cd -r .[K
+ /           cd /[K
+ r           cd /[K
+ d           cd /dev[K
+ e           cd /etc[K
+ m           cd /media[K
+ M           cd /mnt[K
+ s           cd /srv[K
+ u           cd /usr[K
+ ?           cd /usr/share/doc/ranger[K
+ v           cd /var[K
+ h           cd ~[K
+ c           cd ~/.config[K
+ p           cd ~/Gypsy/Project/[K
+ z           cd ~/Zephyrus_share[K
+ o           cd ~/Zephyrus_share/Org[K
+ P           cd ~/Zephyrus_share/Pictures[K
+ i           eval fm.cd('/run/media/' + os.getenv('USER'))[K
+ R           eval fm.cd(ranger.RANGERDIR)[K
+ g           move to=0[K
+ q           tab_close[K
+ T           tab_move -1[K
+[35m-rwxrwxrwx[39m 1 root root 2.5M 2021-06-30 14:40    307M sum, 545G free  1/149  To[?7lp[?7h[17;18H(B[m[1;20H(B[0;1m[34m/t/Zephyrus_sh/Pictures/Wallpapers/[39mlets-sail-2560×1440.jpg[K
+(B[0;1;7m[94m  Wallpapers   [39m(B[m (B[0;1;7m[33m  lets-sail~.jpg 4.07 M [39m(B[m[K
+(B[0;1m[91m [94m Screenshots  [39m(B[m (B[0;1m[91m (B[0m[33m green_moon.jpg 5.45 M 
+(B[0;1m[91m [94m TEST         [39m(B[m (B[0;1m[91m (B[0m[33m kevin-gnu~.jpg 1.04 M 
+(B[0;1m[91m [94m Org          [39m(B[m (B[0;1m[91m (B[0m[33m mjzthv29j~.png 2.18 M 
+(B[0;1m[91m [92m Screenshots_~[39m(B[m (B[0;1m[91m (B[0m[33m 8w1qoej75h~.jpg 986 K 
+(B[0;1m[91m [92m rm_low_res.py[39m(B[m (B[0;1m[91m (B[0m[33m s42qb6xok~.png 1.33 M 
+(B[0;1m[91m [92m rm_low_r~.org[39m(B[m (B[0;1m[91m (B[0m[33m 7zoo3pzev~.png 10.1 M 
+(B[0;1m[91m [92m wallpape~.txt[39m(B[m (B[0;1m[91m (B[0m[33m ik5fo8r511~.jpg 581 K 
+(B[0;1m[91m (B[0m[33m katie_dr~.png[39m(B[m (B[0;1m[91m [92m 6SfyeTYFJ~.webp 205 K 
+[91m (B[0m[33m uc_slug.jpg  [39m(B[m (B[0;1m[91m (B[0m[33m cdrwremxjg~.jpg 503 K 
+(B[0;1m[91m (B[0m[33m peaceful~.jpg[39m(B[m (B[0;1m[91m (B[0m[33m lh29l9n8yy~.png 140 K 
+(B[0;1m[91m (B[0m[33m sammy_sl~.png[39m(B[m (B[0;1m[91m (B[0m[33m fhos4vhfm~.jpg 78.8 K [14;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m i39tpuk3uu~.png 832 K [15;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m 6thz2qsgj3~.png 165 K [16;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m beautiful~.jpg 5.54 M [17;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m ox0vykh8r~.png 1.92 M [18;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m wallpaper~.jpg 2.89 M [19;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m feh_031362~.jpg 881 K [20;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m pointy_rock.jpg 282 K [21;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m wallhaven~.png 3.19 M [39m(B[m[K[22;17H[1K (B[0;1m[91m (B[0m[33m gicpd2r14~.jpg 1.45 M [23;17H[39m(B[m[1K (B[0;1m[91m [92m windowsXP       638 K [24;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m 3xfl82pbj~.jpg 3.37 M [25;17H[39m(B[m[1K (B[0;1m[91m (B[0m[33m hoi650cnx~.jpg 1.58 M [26;24H[39m4.07M 2021-09-15 15:44[17;18H(B[m[2;18H[1;78H(B[0;1m\[2;18H(B[m[1;78H(B[0;1m|[2;18H(B[m[1;78H(B[0;1m/[2;18H(B[m[1;78H(B[0;1m-[2;18H(B[m[1;78H(B[0;1m\[2;18H(B[m[1;78H(B[0;1m|[2;18H(B[m[1;78H(B[0;1m [2;18H(B[m[?12l[?25h[26d:shell[K[2;18H[26;8Hwwaall -- ii lleett   'lets-sail-2560×1440.jpg'[26;15H[26;41H[?1l>[?1006;1000l[26;1H[?1049l[23;0;0t[?1l>[[1;32mI[0m] [1;31mimage[0m: Using image [1;37mlets-sail-2560×1440.jpg[0m.
+[[1;32mI[0m] [1;31mcolors[0m: Generating a colorscheme.
+[[1;32mI[0m] [1;31mcolors[0m: Using wal backend.
+[[1;32mI[0m] [1;31mcolors[0m: Generation complete.
+[[1;32mI[0m] [1;31mwallpaper[0m: Set the new wallpaper.
+]4;0;#0F050B\]4;1;#A05A26\]4;2;#AD6A47\]4;3;#C69147\]4;4;#D5A05E\]4;5;#AA7688\]4;6;#D4BD9A\]4;7;#f2ede0\]4;8;#a9a59c\]4;9;#A05A26\]4;10;#AD6A47\]4;11;#C69147\]4;12;#D5A05E\]4;13;#AA7688\]4;14;#D4BD9A\]4;15;#f2ede0\]10;#f2ede0\]11;#0F050B\]12;#f2ede0\]13;#f2ede0\]17;#f2ede0\]19;#0F050B\]4;232;#0F050B\]4;256;#f2ede0\]708;#0F050B\[[1;32mI[0m] [1;31msequences[0m: Set terminal colors.
+
+[40m    [0m[41m    [0m[42m    [0m[43m    [0m[44m    [0m[45m    [0m[46m    [0m[47m    [0m
+[48;5;8m    [0m[48;5;9m    [0m[48;5;10m    [0m[48;5;11m    [0m[48;5;12m    [0m[48;5;13m    [0m[48;5;14m    [0m[48;5;15m    [0m
+
+[[1;32mI[0m] [1;31mexport[0m: Exported all files.
+[[1;32mI[0m] [1;31mexport[0m: Exported all user files.
+[[1;32mI[0m] [1;31mreload[0m: Reloaded environment.
+[?1h=[?25l[?1006;1000hkranger\[?1h=[?1049h[22;0;0t[1;26r[?25l[39;49m]104(B[m[4l[?7h[?1006;1000h[39;49m[H[2J(B[0;1m[32mtalongi@zephyrus [34m/h/t/Zephyrus_sh/Pictures/Wallpapers/[39mlets-sail-2560×1440.jpg[K
+(B[0;1;7m[94m  Wallpapers   [39m(B[m (B[0;1;7m[33m  lets-sail~.jpg 4.07 M 
+(B[0;1m[91m [94m Screenshots  [39m(B[m (B[0;1m[91m (B[0m[33m green_moon.jpg 5.45 M 
+(B[0;1m[91m [94m TEST         [39m(B[m (B[0;1m[91m (B[0m[33m kevin-gnu~.jpg 1.04 M 
+(B[0;1m[91m [94m Org          [39m(B[m (B[0;1m[91m (B[0m[33m mjzthv29j~.png 2.18 M 
+(B[0;1m[91m [92m Screenshots_~[39m(B[m (B[0;1m[91m (B[0m[33m 8w1qoej75h~.jpg 986 K 
+(B[0;1m[91m [92m rm_low_res.py[39m(B[m (B[0;1m[91m (B[0m[33m s42qb6xok~.png 1.33 M 
+(B[0;1m[91m [92m rm_low_r~.org[39m(B[m (B[0;1m[91m (B[0m[33m 7zoo3pzev~.png 10.1 M 
+(B[0;1m[91m [92m wallpape~.txt[39m(B[m (B[0;1m[91m (B[0m[33m ik5fo8r511~.jpg 581 K 
+(B[0;1m[91m (B[0m[33m katie_dr~.png[39m(B[m (B[0;1m[91m [92m 6SfyeTYFJ~.webp 205 K 
+[91m (B[0m[33m uc_slug.jpg  [39m(B[m (B[0;1m[91m (B[0m[33m cdrwremxjg~.jpg 503 K 
+(B[0;1m[91m (B[0m[33m peaceful~.jpg[39m(B[m (B[0;1m[91m (B[0m[33m lh29l9n8yy~.png 140 K 
+(B[0;1m[91m (B[0m[33m sammy_sl~.png[39m(B[m (B[0;1m[91m (B[0m[33m fhos4vhfm~.jpg 78.8 K [14;18H(B[0;1m[91m (B[0m[33m i39tpuk3uu~.png 832 K [15;18H(B[0;1m[91m (B[0m[33m 6thz2qsgj3~.png 165 K [16;18H(B[0;1m[91m (B[0m[33m beautiful~.jpg 5.54 M [17;18H(B[0;1m[91m (B[0m[33m ox0vykh8r~.png 1.92 M [18;18H(B[0;1m[91m (B[0m[33m wallpaper~.jpg 2.89 M [19;18H(B[0;1m[91m (B[0m[33m feh_031362~.jpg 881 K [20;18H(B[0;1m[91m (B[0m[33m pointy_rock.jpg 282 K [21;18H(B[0;1m[91m (B[0m[33m wallhaven~.png 3.19 M [22;18H(B[0;1m[91m (B[0m[33m gicpd2r14~.jpg 1.45 M [23;18H(B[0;1m[91m [92m windowsXP       638 K [24;18H[91m (B[0m[33m 3xfl82pbj~.jpg 3.37 M [25;18H(B[0;1m[91m (B[0m[33m hoi650cnx~.jpg 1.58 M 
+[35m-rwxrwxrwx[39m 1 root root 4.07M 2021-09-15 15:44   307M sum, 545G free  1/149  To[?7lp[?7h[26;41H(B[m[2;18H[H(B[0;1m[32mtalongi@zephyrus [34m/h/t/Zephyrus_sh/Pictures/Wallpapers/[39mlets-sail-2560×1440.jpg[K
+(B[0;1;7m[94m  Wallpapers   [39m(B[m (B[0;1;7m[33m  lets-sail~.jpg 4.07 M [39m(B[m[K
+(B[0;1m[91m [94m Screenshots  [39m(B[m (B[0;1m[91m (B[0m[33m green_moon.jpg 5.45 M [39m(B[m[K
+(B[0;1m[91m [94m TEST         [39m(B[m (B[0;1m[91m (B[0m[33m kevin-gnu~.jpg 1.04 M [39m(B[m[K
+(B[0;1m[91m [94m Org          [39m(B[m (B[0;1m[91m (B[0m[33m mjzthv29j~.png 2.18 M [39m(B[m[K
+(B[0;1m[91m [92m Screenshots_~[39m(B[m (B[0;1m[91m (B[0m[33m 8w1qoej75h~.jpg 986 K [39m(B[m[K
+(B[0;1m[91m [92m rm_low_res.py[39m(B[m (B[0;1m[91m (B[0m[33m s42qb6xok~.png 1.33 M [39m(B[m[K
+(B[0;1m[91m [92m rm_low_r~.org[39m(B[m (B[0;1m[91m (B[0m[33m 7zoo3pzev~.png 10.1 M [39m(B[m[K
+(B[0;1m[91m [92m wallpape~.txt[39m(B[m (B[0;1m[91m (B[0m[33m ik5fo8r511~.jpg 581 K [39m(B[m[K
+(B[0;1m[91m (B[0m[33m katie_dr~.png[39m(B[m (B[0;1m[91m [92m 6SfyeTYFJ~.webp 205 K [39m(B[m[K
+(B[0;1m[91m (B[0m[33m uc_slug.jpg  [39m(B[m (B[0;1m[91m (B[0m[33m cdrwremxjg~.jpg 503 K [39m(B[m[K
+(B[0;1m[91m (B[0m[33m peaceful~.jpg[39m(B[m (B[0;1m[91m (B[0m[33m lh29l9n8yy~.png 140 K [39m(B[m[K
+(B[0;1m[91m (B[0m[33m sammy_sl~.png[39m(B[m (B[0;1m[91m (B[0m[33m fhos4vhfm~.jpg 78.8 K [39m(B[m[K[14;17H[1K (B[0;1m[91m (B[0m[33m i39tpuk3uu~.png 832 K [39m(B[m[K[15;17H[1K (B[0;1m[91m (B[0m[33m 6thz2qsgj3~.png 165 K [39m(B[m[K[16;17H[1K (B[0;1m[91m (B[0m[33m beautiful~.jpg 5.54 M [39m(B[m[K[17;17H[1K (B[0;1m[91m (B[0m[33m ox0vykh8r~.png 1.92 M [39m(B[m[K[18;17H[1K (B[0;1m[91m (B[0m[33m wallpaper~.jpg 2.89 M [39m(B[m[K[19;17H[1K (B[0;1m[91m (B[0m[33m feh_031362~.jpg 881 K [39m(B[m[K[20;17H[1K (B[0;1m[91m (B[0m[33m pointy_rock.jpg 282 K [39m(B[m[K[21;17H[1K (B[0;1m[91m (B[0m[33m wallhaven~.png 3.19 M [39m(B[m[K[22;17H[1K (B[0;1m[91m (B[0m[33m gicpd2r14~.jpg 1.45 M [39m(B[m[K[23;17H[1K (B[0;1m[91m [92m windowsXP       638 K [39m(B[m[K[24;17H[1K (B[0;1m[91m (B[0m[33m 3xfl82pbj~.jpg 3.37 M [39m(B[m[K[25;17H[1K (B[0;1m[91m (B[0m[33m hoi650cnx~.jpg 1.58 M [39m(B[m[K
+[35m-rwxrwxrwx[39m 1 root root 4.07M 2021-09-15 15:44   307M sum, 545G free  1/149  To[?7lp[?7h[2;18H(B[m[H(B[0;1m[32mtalongi@zephyrus [34m/h/t/Zephyrus_sh/Pictures/Wallpapers/[39mlets-sail-2560×1440.jpg[K
+(B[0m[34mTask View[K
+[39mNo task in the queue.[K
+(B[m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[35m-rwxrwxrwx[39m 1 root root 4.07M 2021-09-15 15:44   307M sum, 545G free  1/149  To[?7lp[?7h[2;18H(B[m
+[A(B[0;1;7m[94m  Wallpapers   [39m(B[m (B[0;1;7m[33m  lets-sail~.jpg 4.07 M [39m(B[m[K
+(B[0;1m[91m [94m Screenshots  [39m(B[m (B[0;1m[91m (B[0m[33m green_moon.jpg 5.45 M 
+(B[0;1m[91m [94m TEST         [39m(B[m (B[0;1m[91m (B[0m[33m kevin-gnu~.jpg 1.04 M 
+(B[0;1m[91m [94m Org          [39m(B[m (B[0;1m[91m (B[0m[33m mjzthv29j~.png 2.18 M 
+(B[0;1m[91m [92m Screenshots_~[39m(B[m (B[0;1m[91m (B[0m[33m 8w1qoej75h~.jpg 986 K 
+(B[0;1m[91m [92m rm_low_res.py[39m(B[m (B[0;1m[91m (B[0m[33m s42qb6xok~.png 1.33 M 
+(B[0;1m[91m [92m rm_low_r~.org[39m(B[m (B[0;1m[91m (B[0m[33m 7zoo3pzev~.png 10.1 M 
+(B[0;1m[91m [92m wallpape~.txt[39m(B[m (B[0;1m[91m (B[0m[33m ik5fo8r511~.jpg 581 K 
+(B[0;1m[91m (B[0m[33m katie_dr~.png[39m(B[m (B[0;1m[91m [92m 6SfyeTYFJ~.webp 205 K 
+[91m (B[0m[33m uc_slug.jpg  [39m(B[m (B[0;1m[91m (B[0m[33m cdrwremxjg~.jpg 503 K 
+(B[0;1m[91m (B[0m[33m peaceful~.jpg[39m(B[m (B[0;1m[91m (B[0m[33m lh29l9n8yy~.png 140 K 
+(B[0;1m[91m (B[0m[33m sammy_sl~.png[39m(B[m (B[0;1m[91m (B[0m[33m fhos4vhfm~.jpg 78.8 K [14;18H(B[0;1m[91m (B[0m[33m i39tpuk3uu~.png 832 K [15;18H(B[0;1m[91m (B[0m[33m 6thz2qsgj3~.png 165 K [16;18H(B[0;1m[91m (B[0m[33m beautiful~.jpg 5.54 M [17;18H(B[0;1m[91m (B[0m[33m ox0vykh8r~.png 1.92 M [18;18H(B[0;1m[91m (B[0m[33m wallpaper~.jpg 2.89 M [19;18H(B[0;1m[91m (B[0m[33m feh_031362~.jpg 881 K [20;18H(B[0;1m[91m (B[0m[33m pointy_rock.jpg 282 K [21;18H(B[0;1m[91m (B[0m[33m wallhaven~.png 3.19 M [22;18H(B[0;1m[91m (B[0m[33m gicpd2r14~.jpg 1.45 M [23;18H(B[0;1m[91m [92m windowsXP       638 K [24;18H[91m (B[0m[33m 3xfl82pbj~.jpg 3.37 M [25;18H(B[0;1m[91m (B[0m[33m hoi650cnx~.jpg 1.58 M [H
+
+[39m(B[m[2;18H[?1l>[?12l[?25h[?1006;1000l[26;1H[?1049l[23;0;0t[?1l>[1m[7m%[27m[1m[0m                                                                               ]2;talongi@zephyrus:~/.config/polybar]1;..onfig/polybar[0m[27m[24m[J[39m[0m[49m[40m[39m talongi@zephyrus [44m[30m[30m ~/.config/polybar [49m[34m[39m [K[?1h=[?2004h[32mn[39m[1m[31mn[1m[31me[0m[39m[1m[31mn[1m[31me[1m[31mo[0m[39m[1m[31mo[1m[31mt[0m[39m[1m[31mo[0m[39m[0m[39m [1m[31mo[1m[31mf[0m[39m[1m[31mf[1m[31me[0m[39m[1m[31me[1m[31mt[0m[39m[1m[31mt[1m[31mc[0m[39m[0m[32mn[0m[32me[0m[32mo[0m[32mf[0m[32me[0m[32mt[0m[32mc[32mh[39m[?1l>[?2004l
+]2;neofetch]1;neofetch[?25l[?7l[0m[34m[1m                    /-
+                   ooo:
+                  yoooo/
+                 yooooooo
+                yooooooooo
+               yooooooooooo
+             .yooooooooooooo
+            .oooooooooooooooo
+           .oooooooarcoooooooo
+          .ooooooooo-oooooooooo
+         .ooooooooo-  oooooooooo
+        :ooooooooo.    :ooooooooo
+       :ooooooooo.      :ooooooooo
+      :oooarcooo         .oooarcooo
+     :ooooooooy           .ooooooooo
+    :ooooooooo   [37m[0m[1m/ooooooooooooooooooo[0m[34m[1m
+   :ooooooooo      [37m[0m[1m.-ooooooooooooooooo.[0m[34m[1m
+  ooooooooo-             [37m[0m[1m-ooooooooooooo.[0m[34m[1m
+ ooooooooo-                 [37m[0m[1m.-oooooooooo.[0m[34m[1m
+ooooooooo.                     [37m[0m[1m-ooooooooo[0m[34m[1m[0m
+[20A[9999999D[44C[0m[1m[0m[1mtalongi[0m@[0m[1mzephyrus[0m 
+[44C[0m----------------[0m 
+[44C[0m[34m[1mOS[0m[0m:[0m ArcoLinux[0m 
+[44C[0m[34m[1mKernel[0m[0m:[0m 5.14.2-arch1-2[0m 
+[44C[0m[34m[1mUptime[0m[0m:[0m 18 hours, 31 mins[0m 
+[44C[0m[34m[1mPackages[0m[0m:[0m 1219 (pacman)[0m 
+[44C[0m[34m[1mShell[0m[0m:[0m zsh 5.8[0m 
+[44C[0m[34m[1mResolution[0m[0m:[0m 2560x1440[0m 
+[44C[0m[34m[1mWM[0m[0m:[0m i3[0m 
+[44C[0m[34m[1mTheme[0m[0m:[0m Arc-Dark [GTK2/3][0m 
+[44C[0m[34m[1mIcons[0m[0m:[0m Sardi-Arc [GTK2/3][0m 
+[44C[0m[34m[1mTerminal[0m[0m:[0m script[0m 
+[44C[0m[34m[1mCPU[0m[0m:[0m AMD Ryzen 9 4900HS with Radeon Graphics (16) @ 2.994GHz[0m 
+[44C[0m[34m[1mGPU[0m[0m:[0m 00:0f.0 VMware SVGA II Adapter[0m 
+[44C[0m[34m[1mMemory[0m[0m:[0m 2792MiB / 32075MiB (8%)[0m 
+
+[44C[30m[40m   [31m[41m   [32m[42m   [33m[43m   [34m[44m   [35m[45m   [36m[46m   [37

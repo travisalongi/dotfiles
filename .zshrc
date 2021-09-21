@@ -8,15 +8,22 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Set up path for python env
+export PYTHONPATH=/home/talongi/Zephyrus_share/Python_packages/My_definitions
+
+# Use pywal color in terminal
+#(cat ~/.cache/wal/sequences &)
+
 export VISUAL='nvim'
 export EDITOR='nvim'
 
 ## My aliases
+alias emacs='emacsclient -cn'
+alias e='emacsclient -cn'
 alias cl='clear'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
-alias ss='cmatrix -a -b -u 5 -C cyan'
 alias python='/opt/anaconda/bin/python'
 alias ipython='/opt/anaconda/bin/ipython'
 alias spyder='/opt/anaconda/bin/spyder'
@@ -31,17 +38,17 @@ alias za='zathura'
 alias sx='sxiv'
 alias weather='curl wttr.in'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias ss='cmatrix -a -b -u 5 -C cyan'
+alias clock='tty-clock -cs -C 4'
+alias sz='source .zshrc'
 
 # SSH connect to nicoya
 alias nicoya='ssh -o TCPKeepAlive=yes -X -Y talongi@nicoya.pmc.ucsc.edu'
 
 # Increase key speed via a rate change -LS
-xset r rate 300 50
+xset r rate 300 60
 
 # Path to your oh-my-zsh installation.
-#installation via script from github
-#export ZSH="/home/$USER/.oh-my-zsh"
-#installation via paru -S oh-my-zsh-git
 export ZSH=/usr/share/oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
@@ -118,27 +125,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-
 ####   ARCOLINUX SETTINGS   ####
-
-
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setopt GLOB_DOTS
@@ -149,7 +136,6 @@ setopt GLOB_DOTS
 export HISTCONTROL=ignoreboth:erasedups
 
 # Make nano the default editor
-
 export EDITOR='nvim'
 export VISUAL='gedit'
 
@@ -375,23 +361,6 @@ ex ()
 
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
-# reporting tools - install when not installed
-# install neofetch
-#neofetch
-# install screenfetch
-#screenfetch
-# install ufetch-git
-#ufetch
-# install ufetch-arco-git
-#ufetch-arco
-# install arcolinux-paleofetch-git
-#paleofetch
-# install alsi
-#alsi
-# install arcolinux-bin-git - standard on ArcoLinux isos (or sfetch - smaller)
-#hfetch
-# install lolcat
-#sfetch | lolcat
 alias ls='exa --icons'
 alias ll='exa -lha --icons'
 alias lt='exa -T --icons'
