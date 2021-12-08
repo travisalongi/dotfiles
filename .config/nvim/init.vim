@@ -27,7 +27,10 @@ Plug 'gmarik/Vundle.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'scrooloose/nerdtree' 
-"Plug 'airblade/vim-gitgutter'	 
+Plug 'airblade/vim-gitgutter'	 
+"Plug 'francoiscabrol/ranger.vim'
+Plug 'kevinhwang91/rnvimr'
+Plug 'rbgrouleff/bclose.vim' " ranger dependency for nvim
 Plug 'preservim/nerdcommenter' 
 Plug 'vimwiki/vimwiki'
 Plug 'rakr/vim-one'
@@ -69,6 +72,24 @@ map <Leader>b :w<CR>:Buffers<CR>
 map <Leader>rg :w<CR>:Rg<CR>   
 "map <Leader>tt :!alacritty &<CR>
 map <Leader>tt :FloatermToggle<CR>
+map <Leader>tc :tabclose<CR>
+
+" ranger stuff
+"let g:python3_host_prog=/home/talong/anaconda3/bin/python
+map <leader>r :RnvimrToggle<CR>
+" Make Ranger to be hidden after picking a file
+let g:rnvimr_enable_picker = 1
+" Add a shadow window, value is equal to 100 will disable shadow
+let g:rnvimr_shadow_winblend = 70
+" Map Rnvimr action
+let g:rnvimr_action = {
+            \ '<CR>': 'NvimEdit tabedit',
+            \ '<C-x>': 'NvimEdit split',
+            \ '<C-v>': 'NvimEdit vsplit',
+            \ 'gw': 'JumpNvimCwd',
+            \ 'yw': 'EmitRangerCwd'
+            \ }
+
 " Telescope stuff
 map <Leader>t :Telescope<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -82,7 +103,7 @@ map <Leader>tr :!alacritty -e ranger %:p:h&<CR><CR>
 map <Leader>p :pwd<CR>
 map <Leader>s :source ~/.config/nvim/init.vim<CR>
 
-nmap <leader>gd <Plug>(coc-definitions)
+nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nnoremap <F5> <esc>:w<CR>:!/home/talongi/anaconda3/bin/python %:p<CR><CR>
 
