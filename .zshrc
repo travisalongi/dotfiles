@@ -1,4 +1,4 @@
-# _________  _   _ ____   ____
+#_________  _   _ ____   ____
 #|__  / ___|| | | |  _ \ / ___|
 #  / /\___ \| |_| | |_) | |
 # / /_ ___) |  _  |  _ <| |___
@@ -7,9 +7,10 @@
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/Scripts:$HOME/.emacs.d/bin
 
 # Set up path for python env
-export PYTHONPATH=/home/talongi/Zephyrus_share/Python_packages/My_definitions
+export PYTHONPATH=PYTHONPATH:/home/talongi/Zephyrus_share/Python_packages/My_definitions
 
 # Use pywal color in terminal
 #(cat ~/.cache/wal/sequences &)
@@ -18,56 +19,45 @@ export VISUAL='nvim'
 export EDITOR='nvim'
 
 ## My aliases
-alias emacs='emacsclient -cn'
+#alias emacs='emacsclient -cn'
 alias e='emacsclient -cn'
 alias cl='clear'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
-alias python='/opt/anaconda/bin/python'
-alias ipython='/opt/anaconda/bin/ipython'
-alias spyder='/opt/anaconda/bin/spyder'
-alias nicoya='ssh -o TCPKeepAlive=yes -X -Y talongi@nicoya.pmc.ucsc.edu'
+alias matlab='/home/talongi/Matlab/R2018a/bin/matlab'
+#alias python='/home/talongi/anaconda3/bin/python'
+#alias ipython='/home/talongi/anaconda3/bin/ipython3'
+#alias spyder='/home/talongi/anaconda3/bin/spyder'
 alias head='head -n 15'
-alias ls='exa --icons'
-alias ll='exa -lha --icons'
-alias lt='exa -T --icons'
+alias ls='COLUMNS=80 exa --icons --sort=modified'
+alias ll='COLUMNS=80 exa -lha --icons --sort=modified'
+alias lt='exa -T --icons --sort=modified'
 alias r='ranger'
 alias n='ncmpcpp'
 alias za='zathura'
 alias sx='sxiv'
+alias m='neomutt'
 alias weather='curl wttr.in'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-alias ss='cmatrix -a -b -u 5 -C cyan'
+alias ss='tmatrix -C cyan -t zephyrus'
 alias clock='tty-clock -cs -C 4'
-alias sz='source .zshrc'
+alias sz='source $HOME/.zshrc'
+alias x='exit'
 
-# SSH connect to nicoya
+# SSH connections
 alias nicoya='ssh -o TCPKeepAlive=yes -X -Y talongi@nicoya.pmc.ucsc.edu'
+alias jeffreys='ssh -o TCPKeepAlive=yes -X -Y talongi@jeffreys.pmc.ucsc.edu'
 
 # Increase key speed via a rate change -LS
-xset r rate 300 60
+xset r rate 300 70
 
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh/
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
-#ZSH_THEME="random"
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+ZSH_THEME="cloud"
 #ZSH_THEME="rkj"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# ZSH_THEME_RANDOM_IGNORED=(pygmalion tjkirch_mod)
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="false"
@@ -135,10 +125,6 @@ setopt GLOB_DOTS
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
-export EDITOR='nvim'
-export VISUAL='gedit'
-
 #PS1='[\u@\h \W]\$ '
 
 if [ -d "$HOME/.bin" ] ;
@@ -148,7 +134,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
-
 
 #fix obvious typo's
 alias cd..='cd ..'
@@ -370,4 +355,28 @@ alias lt='exa -T --icons'
 # figlet TERMINAL -f 3d
 # date '+%Y-%m-%d  %T' | figlet -f miniwi
 # toilet TERMINAL -f smmono9
-date '+%Y-%m-%d  %T' | toilet -f future
+#date '+%Y-%m-%d  %T' | toilet -f future
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/talongi/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/talongi/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/talongi/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/talongi/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+source /home/talongi/.config/broot/launcher/bash/br
+
+
+# remove background ls colors
+eval "$(dircolors -p | \
+    sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+    dircolors /dev/stdin)"
