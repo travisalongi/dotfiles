@@ -1,4 +1,4 @@
-    "_   __                _
+    "_   __          
    "/ | / /__  ____ _   __(_)___ ___
   "/  |/ / _ \/ __ \ | / / / __ `__ \
  "/ /|  /  __/ /_/ / |/ / / / / / / /
@@ -10,59 +10,98 @@ set number relativenumber
 set path+=**	
 set wildmenu
 set incsearch
-set t_Co=256
 set clipboard=unnamedplus
+set t_Co=256
 set mouse=a
 set ignorecase
 set smartindent
 set nohlsearch
-set spell spelllang=en_us
-set colorcolumn=80 " Show line to limit long lines
-set scrolloff=10 " So cursor doesn't go all the way to top or bottom
-set autochdir " Automatically change directory to current file
+set termguicolors  " May fix tmux colors
+set colorcolumn=80  " Show line to limit long lines
+set scrolloff=10  " So cursor doesn't go all the way to top or bottom
+set autochdir  " Automatically change directory to current file
+set cursorline  " Highlights current line
+set splitbelow
+set splitright
 highlight Cursor guifg=white guibg=green
 
 " Pluggins
-"call plug#begin('~/.vim/plugged')
 call plug#begin('~/.config/nvim/plugged')
 Plug 'gmarik/Vundle.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'frazrepo/vim-rainbow'
-Plug 'airblade/vim-gitgutter'	 
-Plug 'kevinhwang91/rnvimr'
-Plug 'rbgrouleff/bclose.vim' " ranger dependency for nvim
-Plug 'preservim/nerdcommenter' 
-Plug 'mhinz/vim-startify'
-Plug 'vimwiki/vimwiki'
+Plug 'nanotee/zoxide.vim'
+Plug 'ggandor/leap.nvim'  " Simplied lightspeed for fast movements
+Plug 'tpope/vim-repeat'  "helper program to use . for repeat plugin things
+Plug 'frazrepo/vim-rainbow'  " Color match brackets and parathesis
+Plug 'airblade/vim-gitgutter'	 " Helpful for seeing git changes
+Plug 'preservim/nerdcommenter'  " Comment help
+Plug 'mhinz/vim-startify'  " Nvim start screen ~ doom emacs
+Plug 'vimwiki/vimwiki'  " For notetaking in vim
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " color hexkeys
+" Colorschmes
 Plug 'rakr/vim-one'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'psliwka/vim-smoothie'
-Plug 'voldikss/vim-floaterm'
-Plug 'nvim-orgmode/orgmode'
+Plug 'olimorris/onedarkpro.nvim'
+Plug 'navarasu/onedark.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+" Other tools
+Plug 'ptzz/lf.vim'  " Integrage w/ lf
+Plug 'voldikss/vim-floaterm'  " Floating terminal
+Plug 'nvim-orgmode/orgmode'  " For looking at emacs org documents
+" Lua pluggins
+Plug 'windwp/nvim-autopairs'  " Autopair parenthesis
+Plug 'karb94/neoscroll.nvim'  " Smooth scrolling
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+ Plug 'danilamihailov/beacon.nvim'  " Highlight large jumps
+" Telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-Plug 'fannheyward/telescope-coc.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-telescope/telescope-symbols.nvim'
+Plug 'jvgrootveld/telescope-zoxide'
+Plug 'nvim-treesitter/nvim-treesitter', {'do' : ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'unblevable/quick-scope'  " Fast horizontal movements
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " color hexkeys
+" LSP
+Plug 'neovim/nvim-lspconfig'  " initiate LSP and install pylsp
+Plug 'hrsh7th/cmp-nvim-lsp'  " Following are required for code completion
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+" Snippets
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
+" Prettier
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'MunifTanjim/prettier.nvim'
 call plug#end()
+
+set completeopt=menu,menuone,noselect
+
+" Don't allow lf file manager to map keybinds
+let g:lf_map_keys = 0
 
 " Map leader key to space
 let mapleader=" "
 
-"Comment toggle is <leader>cc
+" Comment toggle is <leader>cc
+" Comment untoggle is <leader>cu
 
-" Shortcutting split Navigation, saving a keypress:
-	map <C-h> <C-w>h
-	map <C-j> <C-w>j
-	map <C-k> <C-w>k
-	map <C-l> <C-w>l
+" Window navigation ala Doom Emacs
+ map <leader>wh :wincmd h<CR>
+ map <leader>wj :wincmd j<CR>
+ map <leader>wk :wincmd k<CR>
+ map <leader>wl :wincmd l<CR>
+ map <leader>wH :wincmd H<CR>
+ map <leader>wJ :wincmd J<CR>
+ map <leader>wK :wincmd K<CR>
+ map <leader>wL :wincmd L<CR>
+ map <leader>wc :wincmd c<CR>
+ map <leader>wo :wincmd o<CR>
+ map <leader>w= :wincmd =<CR>
+ map <leader>wn :vnew<CR>
 
 " My Mappings
 " Keeps searches centered in page
@@ -81,93 +120,64 @@ nnoremap <leader>k :m .-2<CR>==
 noremap <silent> k gk
 noremap <silent> j gj
 " Leader mappings
-map <Leader>tt :FloatermNew<CR>
+map <Leader>tt :FloatermToggle<CR>
 map <Leader>r :FloatermNew ranger<CR> 
+map <Leader>lf :Lf<CR>
 map <Leader>gg :FloatermNew lazygit<CR> 
 map <Leader>tc :tabclose<CR>
 map <Leader>q :q<CR>
-map <Leader>tp :w<CR> :!alacritty -e /home/talongi/anaconda3/bin/ipython &<CR>
+map <Leader>tp :w<CR> :!kitty -e $HOME/anaconda3/bin/ipython -i --no-banner &<CR><CR>
 map <Leader>p :pwd<CR>
-map <Leader>wc :!wc %<CR>
 map <Leader>sz :source ~/.config/nvim/init.vim<CR>
-map <Leader>st :QuickScopeToggle<CR>
-map <Leader>gh :cd ~<CR><CR>
-map <Leader>dt :r !date ~<CR><CR>
+map <Leader>gh :Startify<CR>
+map <Leader>bn :bn<CR>
+map <Leader>bp :bp<CR>
+map <Leader>sc :set spell spelllang=en_us<CR>
+map <Leader>sco :set nospell<CR>
 
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
-nnoremap <F5> <esc>:w<CR>:!/home/talongi/anaconda3/bin/python %:p<CR><CR>
+" Run current script in a new ipython terminal and keep open
+nnoremap <F5> <esc>:w<CR>:!kitty -e ipython -i --no-banner % &<CR><CR>
+nnoremap <F4> <esc>:w<CR>:!tmux splitw -h ipython <CR><CR>
+nnoremap <F3> <esc>:w<CR>:!tmux send-keys -t Dev:Ipython run %:p Enter<CR><CR>
+nnoremap <F2> <esc>:w<CR>:FloatermNew ipython --no-banner <CR><CR>
 
+" Abbreviation
 " Datetime stamp  https://vim.fandom.com/wiki/Insert_current_date_or_time
 :iab <expr> dts strftime("<%F %a>")
+:iab  htt https://
+":iab tfl Thinned Fault Likelihood
 
+" Terminal
+" Allows escape from float term
+tnoremap <Esc> <C-\><C-n>  
 let g:floaterm_width = 0.85
 let g:floaterm_height = 0.85
 let g:python_host_prog = '~/anaconda3/bin/python'
 
 " Telescope keybinds
-map <Leader>t <cmd>Telescope<CR>
+nnoremap <Leader>te <cmd>Telescope<CR>
 nnoremap <leader>ff <cmd>Telescope find_files theme=ivy<cr>
 nnoremap <leader>fc <cmd>Telescope find_files cwd=~/.config<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope file_browser hidden=true theme=ivy<cr>
 nnoremap <leader>fr <cmd>Telescope oldfiles theme=ivy<cr>
-nnoremap <Leader>b <cmd>Telescope buffers theme=ivy<CR>
-noremap <leader>sc <cmd>Telescope spell_suggest theme=ivy<cr>
-
-
-" Requirement to run lua stuff in nvim
-lua << EOF
-require('telescope').setup{
-  -- change some default behavior
-  defaults = {
-	  prompt_prefix = ">>> ",
-	  selection_caret = "* "
-	  }
-}
-require('telescope').load_extension("file_browser")
-require('telescope').load_extension("fzf")
- -- require('telescope').load_extension("fzy_native")
-require('telescope').load_extension('media_files')
-require('telescope').load_extension('coc')
-
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.org = {
-  install_info = {
-    url = 'https://github.com/milisims/tree-sitter-org',
-    revision = 'f110024d539e676f25b72b7c80b0fd43c34264ef',
-    files = {'src/parser.c', 'src/scanner.cc'},
-  },
-  filetype = 'org',
-}
-
-require'nvim-treesitter.configs'.setup {
-  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
-  highlight = {
-    enable = true,
-    disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
-    additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
-  },
-  ensure_installed = {'org'}, -- Or run :TSUpdate org
-}
-
-require('orgmode').setup({
-  org_agenda_files = {'~/Zephyrus_share/Org/*', '~/my-orgs/**/*'},
-  org_default_notes_file = '~/Zephyrus_share/Org/refile.org',
-})
-EOF
-
-
-" Quickscope Stuff
-highlight QuickScopePrimary guibg='#afff5f' gui=bold ctermfg=green cterm=bold
-highlight QuickScopeSecondary guibg='#5fffff' gui=bold ctermfg=cyan cterm=bold
-let g:qs_max_chars=100 " max characters in line to use QS
+nnoremap <Leader>bb <cmd>Telescope buffers theme=ivy<CR>
+nnoremap <Leader>d <cmd>Telescope diagnostics theme=ivy<CR>
+noremap <leader>ss <cmd>Telescope spell_suggest theme=ivy<cr>
+noremap <leader>zz <cmd>Telescope zoxide list theme=ivy<cr>
 
 
 " Go back to same place in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
+
+
+" Highlight on yank
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank({higroup="DiffText", timeout=300})
+augroup END
 
 
 " Set colorscheme & a hack to make work with nvim
@@ -182,32 +192,34 @@ if (empty($TMUX))
 endif
 
 
-"Standard Vim-one color scheme
-set background=dark " for the dark version
-colorscheme one
-
-" Set Light line color scheme to same as color schme
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ }
+" Beacon
+let g:beacon_size = 40
+let g:beacon_minimal_jump = 5
 
 
-" Use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+lua << EOF
+-- My LUA configs
+require "talongi.telescope"
+require "talongi.neoscroll"
+require "talongi.prettier"
+require "talongi.nvim-autopairs"
+-- Something here is broken, not worried about fixing it
+-- require "talongi.nvim-orgmode"  
+require "talongi.nvim-cmp"
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+-- Theme
+require('leap').set_default_keymaps()
+require('onedark').load()
+require "talongi.lualine"
+-- require("luasnip.loaders.from_vscode").load()
+
+EOF
 
 
-" Startify stuff
+
+
+" Startify --> switch to startup-nvim/startup.nvim at somepoint
 let g:startify_lists = [
           \ { 'type': 'files',     'header': ['   Files']            },
           \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
@@ -231,3 +243,5 @@ let g:startify_custom_header = [
         \ '                                      ',
         \ '                                      ',
         \]
+
+set laststatus=3  " Single status line, 2 for mutli

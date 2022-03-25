@@ -8,18 +8,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/Scripts:$HOME/.emacs.d/bin
-
 # Set up path for python env
 export PYTHONPATH=PYTHONPATH:/home/talongi/Zephyrus_share/Python_packages/My_definitions
-
-# Use pywal color in terminal
-#(cat ~/.cache/wal/sequences &)
-
 export VISUAL='nvim'
 export EDITOR='nvim'
+export PAGER='less'
 
 ## My aliases
-#alias emacs='emacsclient -cn'
+alias emacs='emacsclient -cn'
 alias e='emacsclient -cn'
 alias cl='clear'
 alias v='nvim'
@@ -38,12 +34,41 @@ alias n='ncmpcpp'
 alias za='zathura'
 alias sx='sxiv'
 alias m='neomutt'
+alias lg='lazygit'
 alias weather='curl wttr.in'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias ss='tmatrix -C cyan -t zephyrus'
 alias clock='tty-clock -cs -C 4'
 alias sz='source $HOME/.zshrc'
 alias x='exit'
+
+# Fuzzy change directory
+funciton fcd() {
+	cd "$(find -type d | fzf)"
+}
+#bindkey -s '^f' 'fcd\n'
+
+
+# Change directory on exit to lf's current directory
+function lfcd() {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+alias lf='lfcd'
+# Ctrl-o opens lfcd
+#bindkey -s '^o' 'lfcd\n'
+
+# Fuzzy get file path
+alias getpath="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c"
 
 # SSH connections
 alias nicoya='ssh -o TCPKeepAlive=yes -X -Y talongi@nicoya.pmc.ucsc.edu'
@@ -57,9 +82,8 @@ export ZSH=/usr/share/oh-my-zsh/
 
 #ZSH_THEME="agnoster"
 ZSH_THEME="cloud"
-#ZSH_THEME="rkj"
 
-# Uncomment the following line to use case-sensitive completion.
+# Case-sensitive completion.
 CASE_SENSITIVE="false"
 
 # Uncomment the following line to use hyphen-insensitive completion.
@@ -111,10 +135,10 @@ CASE_SENSITIVE="false"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-
+#
 ####   ARCOLINUX SETTINGS   ####
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -138,12 +162,6 @@ fi
 #fix obvious typo's
 alias cd..='cd ..'
 alias pdw="pwd"
-alias udpate='sudo pacman -Syyu'
-alias upate='sudo pacman -Syyu'
-alias updte='sudo pacman -Syyu'
-alias updqte='sudo pacman -Syyu'
-alias upqll="paru -Syu --noconfirm"
-alias upal="paru -Syu --noconfirm"
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
@@ -194,16 +212,6 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 #add new fonts
 alias update-fc='sudo fc-cache -fv'
 
-#copy/paste all content of /etc/skel over to home folder - backup of config created - beware
-alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
-#backup contents of /etc/skel to hidden backup folder in home/user
-alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
-
-#copy bashrc-latest over on bashrc - cb= copy bashrc
-#alias cb='sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc'
-#copy /etc/skel/.zshrc over on ~/.zshrc - cb= copy zshrc
-alias cz='sudo cp /etc/skel/.zshrc ~/.zshrc && exec zsh'
-
 #switch between bash and zsh
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
@@ -237,14 +245,6 @@ alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --
 #mounting the folder Public for exchange between host and guest on virtualbox
 alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
 
-#shopt
-#shopt -s autocd # change to named directory
-#shopt -s cdspell # autocorrects cd misspellings
-#shopt -s cmdhist # save multi-line commands in history as single line
-#shopt -s dotglob
-#shopt -s histappend # do not overwrite history
-#shopt -s expand_aliases # expand aliases
-
 #youtube-dl
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
 alias yta-best="youtube-dl --extract-audio --audio-format best "
@@ -273,7 +273,6 @@ alias rg="rg --sort path"
 #get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
-#nano for important configuration files
 #know what you do in these files
 alias nlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
 alias npacman="sudo $EDITOR /etc/pacman.conf"
@@ -380,3 +379,298 @@ source /home/talongi/.config/broot/launcher/bash/br
 eval "$(dircolors -p | \
     sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
     dircolors /dev/stdin)"
+
+
+# =============================================================================
+#
+# Utility functions for zoxide.
+#
+
+# pwd based on the value of _ZO_RESOLVE_SYMLINKS.
+function __zoxide_pwd() {
+    \builtin pwd -L
+}
+
+# cd + custom logic based on the value of _ZO_ECHO.
+function __zoxide_cd() {
+    # shellcheck disable=SC2164
+    \builtin cd "$@"
+}
+
+# =============================================================================
+#
+# Hook configuration for zoxide.
+#
+
+# Hook to add new entries to the database.
+function __zoxide_hook() {
+    \command zoxide add -- "$(__zoxide_pwd || \builtin true)"
+}
+
+# Initialize hook.
+# shellcheck disable=SC2154
+if [[ ${precmd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]] && [[ ${chpwd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]]; then
+    chpwd_functions+=(__zoxide_hook)
+fi
+
+# =============================================================================
+#
+# When using zoxide with --no-aliases, alias these internal functions as
+# desired.
+#
+
+__zoxide_z_prefix='z#'
+
+# Jump to a directory using only keywords.
+function __zoxide_z() {
+    # shellcheck disable=SC2199
+    if [[ "$#" -eq 0 ]]; then
+        __zoxide_cd ~
+    elif [[ "$#" -eq 1 ]] && [[ "$1" = '-' ]]; then
+        if [[ -n "${OLDPWD}" ]]; then
+            __zoxide_cd "${OLDPWD}"
+        else
+            # shellcheck disable=SC2016
+            \builtin printf 'zoxide: $OLDPWD is not set'
+            return 1
+        fi
+    elif [[ "$#" -eq 1 ]] && [[ -d "$1" ]]; then
+        __zoxide_cd "$1"
+    elif [[ "$@[-1]" == "${__zoxide_z_prefix}"* ]]; then
+        # shellcheck disable=SC2124
+        \builtin local result="${@[-1]}"
+        __zoxide_cd "${result:${#__zoxide_z_prefix}}"
+    else
+        \builtin local result
+        result="$(\command zoxide query --exclude "$(__zoxide_pwd || \builtin true)" -- "$@")" &&
+            __zoxide_cd "${result}"
+    fi
+}
+
+# Jump to a directory using interactive search.
+function __zoxide_zi() {
+    \builtin local result
+    result="$(\command zoxide query -i -- "$@")" && __zoxide_cd "${result}"
+}
+
+# =============================================================================
+#
+# Convenient aliases for zoxide. Disable these using --no-aliases.
+#
+
+# Remove definitions.
+function __zoxide_unset() {
+    \builtin unalias "$@" &>/dev/null || \builtin true
+    \builtin unfunction "$@" &>/dev/null || \builtin true
+    \builtin unset "$@" &>/dev/null
+}
+
+__zoxide_unset z
+function z() {
+    __zoxide_z "$@"
+}
+
+__zoxide_unset zi
+function zi() {
+    __zoxide_zi "$@"
+}
+
+if [[ -o zle ]]; then
+    __zoxide_unset _z
+    function _z() {
+        # Only show completions when the cursor is at the end of the line.
+        # shellcheck disable=SC2154
+        [[ "${#words[@]}" -eq "${CURRENT}" ]] || return
+
+        if [[ "${#words[@]}" -eq 2 ]]; then
+            _files -/
+        elif [[ "${words[-1]}" == '' ]]; then
+            \builtin local result
+            # shellcheck disable=SC2086
+            if result="$(\command zoxide query -i -- ${words[2,-1]})"; then
+                __zoxide_result="${result}"
+            else
+                __zoxide_result=''
+            fi
+            \builtin printf '\e[5n'
+        fi
+    }
+
+    __zoxide_unset _z_helper
+    function _z_helper() {
+        \builtin local result="${__zoxide_z_prefix}${__zoxide_result}"
+        # shellcheck disable=SC2296
+        [[ -n "${__zoxide_result}" ]] && LBUFFER="${LBUFFER}${(q-)result}"
+        \builtin zle reset-prompt
+    }
+
+    \builtin zle -N _z_helper
+    \builtin bindkey "\e[0n" _z_helper
+    if [[ "${+functions[compdef]}" -ne 0 ]]; then
+        \compdef -d z
+        \compdef _z z
+    fi
+fi
+
+# LF icon stuff, can move and debug later
+export LF_ICONS="\
+tw=:\
+st=:\
+ow=:\
+dt=:\
+di=:\
+fi=:\
+ln=:\
+or=:\
+*.py=:\
+*.c=:\
+*.cc=:\
+*.clj=:\
+*.coffee=:\
+*.cpp=:\
+*.css=:\
+*.d=:\
+*.dart=:\
+*.erl=:\
+*.exs=:\
+*.fs=:\
+*.go=:\
+*.h=:\
+*.hh=:\
+*.hpp=:\
+*.hs=:\
+*.html=:\
+*.java=:\
+*.jl=:\
+*.js=:\
+*.json=:\
+*.lua=:\
+*.md=:\
+*.php=:\
+*.pl=:\
+*.pro=:\
+*.rb=:\
+*.rs=:\
+*.scala=:\
+*.ts=:\
+*.vim=:\
+*.cmd=:\
+*.ps1=:\
+*.sh=:\
+*.bash=:\
+*.zsh=:\
+*.fish=:\
+*.tar=:\
+*.tgz=:\
+*.arc=:\
+*.arj=:\
+*.taz=:\
+*.lha=:\
+*.lz4=:\
+*.lzh=:\
+*.lzma=:\
+*.tlz=:\
+*.txz=:\
+*.tzo=:\
+*.t7z=:\
+*.zip=:\
+*.z=:\
+*.dz=:\
+*.gz=:\
+*.lrz=:\
+*.lz=:\
+*.lzo=:\
+*.xz=:\
+*.zst=:\
+*.tzst=:\
+*.bz2=:\
+*.bz=:\
+*.tbz=:\
+*.tbz2=:\
+*.tz=:\
+*.deb=:\
+*.rpm=:\
+*.jar=:\
+*.war=:\
+*.ear=:\
+*.sar=:\
+*.rar=:\
+*.alz=:\
+*.ace=:\
+*.zoo=:\
+*.cpio=:\
+*.7z=:\
+*.rz=:\
+*.cab=:\
+*.wim=:\
+*.swm=:\
+*.dwm=:\
+*.esd=:\
+*.jpg=:\
+*.jpeg=:\
+*.mjpg=:\
+*.mjpeg=:\
+*.gif=:\
+*.bmp=:\
+*.pbm=:\
+*.pgm=:\
+*.ppm=:\
+*.tga=:\
+*.xbm=:\
+*.xpm=:\
+*.tif=:\
+*.tiff=:\
+*.png=:\
+*.svg=:\
+*.svgz=:\
+*.mng=:\
+*.pcx=:\
+*.mov=:\
+*.mpg=:\
+*.mpeg=:\
+*.m2v=:\
+*.mkv=:\
+*.webm=:\
+*.ogm=:\
+*.mp4=:\
+*.m4v=:\
+*.mp4v=:\
+*.vob=:\
+*.qt=:\
+*.nuv=:\
+*.wmv=:\
+*.asf=:\
+*.rm=:\
+*.rmvb=:\
+*.flc=:\
+*.avi=:\
+*.fli=:\
+*.flv=:\
+*.gl=:\
+*.dl=:\
+*.xcf=:\
+*.xwd=:\
+*.yuv=:\
+*.cgm=:\
+*.emf=:\
+*.ogv=:\
+*.ogx=:\
+*.aac=:\
+*.au=:\
+*.flac=:\
+*.m4a=:\
+*.mid=:\
+*.midi=:\
+*.mka=:\
+*.mp3=:\
+*.mpc=:\
+*.ogg=:\
+*.ra=:\
+*.wav=:\
+*.oga=:\
+*.opus=:\
+*.spx=:\
+*.xspf=:\
+*.pdf=:\
+*.nix=:\
+"
