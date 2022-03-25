@@ -1,0 +1,217 @@
+# Basic Settings
+set previewer ~/.config/lf/preview
+set preview true
+set hidden true
+#set drawbox true
+set icons true
+set ignorecase true
+
+# Custom Functions
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd sudomkfile ${{
+  printf "File Name: "
+  read ans
+  sudo $EDITOR $ans
+}}
+
+
+cmd fzf_jump ${{
+  res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
+  if [ -f "$res" ]; then
+    cmd="select"
+  elif [ -d "$res" ]; then
+    cmd="cd"
+  fi
+  lf -remote "send $id $cmd \"$res\""
+}}
+
+cmd z_jump ${{
+  res="$(zoxide query -i)"
+  if [ -f "$res" ]; then
+    cmd="select"
+  elif [ -d "$res" ]; then
+    cmd="cd"
+  fi
+  clear >$(tty)
+  lf -remote "send $id $cmd \"$res\""
+}}
+
+cmd broot_jump ${{
+  f=$(mktemp)
+  res="$(broot --outcmd $f && cat $f | sed 's/cd //')"
+  rm -f "$f"
+  if [ -f "$res" ]; then
+    cmd="select"
+  elif [ -d "$res" ]; then
+    cmd="cd"
+  fi
+  lf -remote "send $id $cmd \"$res\""
+}}
+
+cmd open_config  ${{
+  $EDITOR $(bookmenu -b ~/.config/bookmenu/configs -f fzf -o)
+}}
+
+cmd dragon %dragon -a -x $fx
+cmd dragon-stay %dragon -a $fx
+cmd dragon-individual %dragon $fx
+cmd cpdragon %cpdragon
+cmd mvdragon %mvdragon
+cmd dlfile %dlfile
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+cmd zip %zip -r "$f" "$f"
+cmd tar %tar cvf "$f.tar" "$f"
+cmd targz %tar cvzf "$f.tar.gz" "$f"
+cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
+
+# Trash cli bindings
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    # extract the substring from start of string up to delimiter.
+    # this is the first "element" of the string.
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    # if there's only one element left, set `files` to an empty string.
+    # this causes us to exit this `while` loop.
+    # else, we delete the first "element" of the string from files, and move onto the next.
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+cmd clear_trash %trash-empty
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+cmd stripspace %stripspace "$f"
+
+# Runs custom script to copy file path to clip board
+cmd yankpath :!yankfullpath
+
+# Bindings
+# Remove some defaults
+map m
+map o
+map n
+#map "'"
+map '"'
+map d
+map c
+map e
+map f
+map w
+map r
+map D
+map y
+
+# File Openers
+map ee $$EDITOR $fs
+#map u $view "$f"
+
+# Archive Mappings
+map az zip
+map at tar
+map ag targz
+map ab targz
+map au unarchive
+
+# Trash Mappings
+#map dd trash
+map tc clear_trash
+map tr restore_trash
+
+# Fzf jump
+map f fzf_jump
+
+# Zoxide
+map zz z_jump
+
+# Yankpath
+map yp yankpath
+
+# Dragon Mapping
+map dr dragon
+map ds dragon-stay
+map di dragon-individual
+map dm mvdragon
+map dc cpdragon
+map dl dlfile
+
+map ss stripspace
+
+# Basic Functions
+map . set hidden!
+map D trash
+map p paste
+map dd cut
+map yy copy
+map <enter> open
+map ms mark-save
+map mf mkfile
+map mr sudomkfile
+map mkd mkdir
+#map ms $mkscript
+map bg setwallpaper
+map br $vimv $fx
+map cw rename
+map H top
+map L bottom
+map R reload
+map u unselect
+map om :set sortby time; set info time
+map on :set sortby name
+map sx :!sxiv -t *png *jpg *PNG *JPG &  # Opens selected files
+map em :!emacsclient -cn $f &  # Opens selected files
+map va :!nvim $fs  # Opens selected files
+
+# Movement
+map \;j cd ~
+map gh cd ~
+map gp cd ~/Drifter/Project/
+map gz cd ~/Zephyrus_share
+map gw cd ~/Zephyrus_share/Wedding
+map go cd ~/Zephyrus_share/Org
+map gP cd ~/Zephyrus_share/Pictures
+map gs cd ~/Zephyrus_share/School
+map gc cd ~/.config
+map gT cd ~/.local/share/Trash
+map gt !thunar . &	
+
+# colors
+#export LF_COLORS="~/Documents=01;31:~/Downloads=01;31:~/.local/share=01;31:~/.config/lf/lfrc=31:.git/=01;32:.git=32:.gitignore=32:Makefile=32:README.*=33:*.txt=34:*.md=34:ln=01;36:di=01;34:ex=01"
