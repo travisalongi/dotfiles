@@ -45,12 +45,12 @@ cmp.setup({
   end, { "i", "s" }),
   },
 
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        },
-  experimental = {
-    ghost_text = true,
-},
+  --[[documentation = {]]
+    --[[border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },]]
+        --[[},]]
+  --[[experimental = {]]
+    --[[ghost_text = true,]]
+--[[},]]
 
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -93,6 +93,9 @@ cmp.setup.cmdline(':', {
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+  --require('lspconfig').pyright.setup {
+  --capabilities = capabilities,
+--}
   require('lspconfig').pylsp.setup {
   capabilities = capabilities,
 }
