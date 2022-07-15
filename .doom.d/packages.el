@@ -1,3 +1,4 @@
+
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
@@ -7,7 +8,19 @@
 
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
-;(package! some-package)
+(package! olivetti)  ;; for writing, limits width
+(package! org-superstar)  ;; Better org file markers
+(package! define-word)  ;; get a definition
+(package! writeroom-mode)
+(package! dired-open)
+(package! visual-fill-column)
+(package! smooth-scrolling)
+(package! evil-snipe)
+(package! tldr)
+(package! all-the-icons-dired)
+(package! beacon)
+(package! centered-cursor-mode)
+(package! zoxide)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
