@@ -1,4 +1,4 @@
-#####################################################################################
+
 #                          Start of all the settings                                #
 #####################################################################################
 
@@ -73,23 +73,24 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1; workspace 1
-bindsym $mod+Shift+2 move container to workspace 2; workspace 2
-bindsym $mod+Shift+3 move container to workspace 3; workspace 3
-bindsym $mod+Shift+4 move container to workspace 4; workspace 4
-bindsym $mod+Shift+5 move container to workspace 5; workspace 5
-bindsym $mod+Shift+6 move container to workspace 6; workspace 6
-bindsym $mod+Shift+7 move container to workspace 7; workspace 7
-bindsym $mod+Shift+8 move container to workspace 8; workspace 8
-bindsym $mod+Shift+9 move container to workspace 9; workspace 9
-bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 #####################################################################################
 #                          3 menu's in arcolinux                                     #
 #####################################################################################
 # start dmenu
 #bindsym $mod+space exec --no-startup-id dmenu_run -l 25 -nb '#282c34' -nf '#f0c674' -sb '#fea63c' -sf '#191919' -fn 'isoveka-ss09:pixelsize=18' 
-bindsym $mod+space exec /usr/local/bin/dmenu_run -c
+#bindsym $mod+space exec /usr/local/bin/dmenu_run -c -p "RUN"
+bindsym $mod+space exec rofi -show run
 
 # start xfce4-appfinder
 bindsym mod1+F2 exec --no-startup-id xfce4-appfinder --collapsed
@@ -274,7 +275,7 @@ bindsym control+mod1+e exec --no-startup-id arcolinux-tweak-tool
 bindsym $mod+Return exec --no-startup-id alacritty;focus
 
 #System monitor
-bindsym control+Shift+Escape exec --no-startup-id alacritty -e gotop; focus
+bindsym control+Shift+Escape exec --no-startup-id kitty -e gotop; focus
 
 #arcolinux-logout
 bindsym control+mod1+k exec --no-startup-id arcolinux-logout
@@ -293,9 +294,6 @@ bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
 
 #pamac-manager
 bindsym control+mod1+p exec --no-startup-id pamac-manager
-
-#xkill
-bindsym --release $mod+Escape exec xkill
 
 #####################################################################################
 #                          screenshots                                              #
@@ -375,7 +373,6 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
-bindsym $mod+Shift+b bar mode toggle
 
 #####################################################################################
 #                          border control                                           #
@@ -387,7 +384,7 @@ hide_edge_borders both
 #changing border style
 #super+t in arcolinux is starting terminal
 bindsym $mod+t border normal
-bindsym $mod+y border 1pixel
+bindsym $mod+y border pixel 1
 bindsym $mod+u border none
 
 #new_window pixel 1
@@ -406,10 +403,10 @@ popup_during_fullscreen smart
 #                          i3 gaps next                                             #
 #####################################################################################
 for_window [class="^.*"] border pixel 2
-gaps inner 15
-gaps outer 4
+gaps inner 2
+gaps outer 2
 #smart_gaps on
-#smart_borders on
+smart_borders on
 
 #####################################################################################
 #                          i3 gaps change                                           #
@@ -545,8 +542,8 @@ mode "$mode_gaps_outer" {
 
     # Window color settings
     # class                 border  backgr. text    indicator
-    client.focused          #6790EB #6790EB #e5e5e5 #DE935f #F0c674
-    client.unfocused        #222222 #222222 #aaaaaa #222222
+    client.focused          #6790EB #6790EB #e5e5e5 #DE935f #ecbe7b
+    client.unfocused        #222222 #222222 #aaaaaa #222222 
     client.focused_inactive #222222 #222222 #a9a9a9 #222222
     client.placeholder      #222222 #222222 #aaaaaa #222222
     client.urgent           #d42121 #d42121 #f7f7f7 #d42121
@@ -573,7 +570,7 @@ set $ws8 8
 
 # Open applications on specific workspaces
 assign [class="Thunderbird"] $ws1
-assign [class="Firefox"] $ws2
+assign [class="Brave"] $ws2
 assign [class="Spotify"] $ws6
 assign [class="Slack"] $ws7
 
@@ -584,21 +581,24 @@ bindsym $mod+F8 exec --no-startup-id mpc next
 bindsym $mod+Shift+Return exec --no-startup-id thunar
 
 # Set my keybindings for commonly used programs
-#bindsym $mod+b exec --no-startup-id firefox 
-bindsym $mod+b exec --no-startup-id firefox 
+bindsym $mod+b exec --no-startup-id brave 
 bindsym $mod+e exec --no-startup-id emacsclient -c ~/Zephyrus_share/Org
-bindsym $mod+r exec --no-startup-id alacritty -e ranger; focus
+bindsym $mod+r exec --no-startup-id kitty -e ranger; focus
 bindsym $mod+m exec --no-startup-id thunderbird; focus
-bindsym $mod+n exec --no-startup-id alacritty -e ncmpcpp; focus
-bindsym $mod+p exec --no-startup-id $HOME/Scripts/papers_launcher
+bindsym $mod+n exec --no-startup-id kitty -e ncmpcpp; focus
+bindsym $mod+Shift+b exec --no-startup-id bookmarks
+bindsym $mod+Shift+w exec --no-startup-id web_search
+bindsym $mod+Shift+s exec --no-startup-id scholar_search
+bindsym $mod+p exec --no-startup-id papers_launcher
 bindsym $mod+Shift+Print exec --no-startup-id notify-send "$(ncmpcpp --current-song | awk -F ')' '{print $2}')" -i  /home/talongi/.config/dunst/music.jpg
 bindsym $mod+F4 exec --no-startup-id galculator 
 
 # Mount drives from windows side
-# Externals
+# ~~~ Externals
 exec_always --no-startup-id vmhgfs-fuse -o auto_unmount -o nonempty .host:/Gypsy ~/Gypsy
 exec_always --no-startup-id vmhgfs-fuse -o auto_unmount -o nonempty .host:/Drifter ~/Drifter
-# Internal shared zephyrus drive
+exec_always --no-startup-id vmhgfs-fuse -o auto_unmount -o nonempty .host:/Caravan ~/Caravan
+# ~~~ Internal shared zephyrus drive
 exec_always --no-startup-id vmhgfs-fuse -o auto_unmount -o nonempty .host:/Zephyrus_share ~/Zephyrus_share 
 
 # Auto Start unclutter (hides cursor when not in use)
@@ -612,3 +612,5 @@ exec_always --no-startup-id $HOME/.config/polybar/polybar.sh
 # Set the background
 exec_always --no-startup-id nitrogen --restore --set-zoom-fill
 
+# Remap capslock
+exec_always --no-startup-id setxkbmap -option caps:escape
