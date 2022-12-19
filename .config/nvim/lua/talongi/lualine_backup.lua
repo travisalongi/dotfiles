@@ -3,13 +3,13 @@ require('lualine').setup({
   options = {
     theme = 'catppuccin',
     section_separators = { left = '', right = '' },
-    component_separators = { left = '|', right = '|' },
+    component_separators = { left = '', right = '' },
     },
   sections = {
 	  lualine_a = {
-		{'mode',
+		{'mode', 
 		icons_enabled = true,
-		separator = {left = '', right = ''},
+		separator = {left = '', right = ''}, 
 		right_padding = 0},
 	  },
     lualine_b = {'diff', 'diagnostics'},
@@ -40,7 +40,7 @@ require('lualine').setup({
     lualine_z = {}
   },
   tabline = {},
-  extensions = {'toggleterm', 'nvim-tree'}
+  extensions = {'toggleterm'}
 })
 
 
