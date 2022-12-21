@@ -6,10 +6,10 @@ require"surround".setup {
   quotes = {"'", '"'},
   brackets = {"(", '{', '['},
   space_on_closing_char = false,
-  prefix = " s",
   pairs = {
     nestable = { b = { "(", ")" }, s = { "[", "]" }, B = { "{", "}" }, a = { "<", ">" } },
-    linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' }, m = { "*", "*" }
+    linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' } }
   },
-  },
+  prefix = "s"
 }
+

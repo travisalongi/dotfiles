@@ -1,4 +1,3 @@
--- Lualine status bar
 require('lualine').setup({
   options = {
     theme = 'catppuccin',
@@ -10,12 +9,12 @@ require('lualine').setup({
 		{'mode',
 		icons_enabled = true,
 		separator = {left = '', right = ''},
-		right_padding = 0},
+		right_padding = -1},
 	  },
     lualine_b = {'diff', 'diagnostics'},
     lualine_c = {
 	    {'filename',
-                 path=1,
+                 path=0,
 	 symbols = {
         modified = ' 💀',      -- Text to show when the file is modified.
         readonly = ' ﰸ ',      -- Text to show when the file is non-modifiable or readonly.
@@ -28,7 +27,7 @@ require('lualine').setup({
     lualine_x = {{'fileformat'}, {'filetype', icon_only=true},},
     lualine_y = {'progress'},
     lualine_z = {
-	    {'location', separator = {left = '', right =  ''}, left_padding = 0},
+	    {'location', separator = {left = '', right =  ''}, left_padding = -1},
 	    },
   },
   inactive_sections = {
@@ -42,5 +41,4 @@ require('lualine').setup({
   tabline = {},
   extensions = {'toggleterm', 'nvim-tree'}
 })
-
 
