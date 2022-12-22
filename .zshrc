@@ -7,10 +7,12 @@
 
 # Set up path for python env
 export PYTHONPATH=PYTHONPATH:/home/talongi/Zephyrus_share/Python_packages/My_definitions
-export PATH=$PATH:$HOME/Scripts:$HOME/.emacs.d/bin
+export PATH=$PATH:$HOME/Scripts:$HOME/.emacs.d/bin:/usr/bin/lua-language-server
 
 export VISUAL='nvim'
 export EDITOR='nvim'
+export MANPAGER='nvim +Man!'
+# export MANPAGER='bat -p'
 export PAGER='less'
 export BROWSER='brave'
 export READER='zathura'
@@ -22,39 +24,47 @@ setxkbmap -option caps:escape
 
 
 # My aliases
-alias emacs='emacsclient -cn'
-alias e='emacsclient -cn'
 alias cl='clear'
+alias clock='tty-clock -cs -C 4'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dr='dragon'
+alias e='emacsclient -cn'
+alias emacs='emacsclient -cn'
+alias head='head -n 15'
+alias ipython="ipython --no-banner"
+alias lg='lazygit'
+alias ll='COLUMNS=80 exa -lha --icons --sort=modified'
+alias ls='COLUMNS=80 exa --icons --sort=modified'
+alias lt='exa -T --icons --sort=modified'
+alias n='ncmpcpp'
+alias r='ranger'
+alias rg="sk --ansi -i -c 'ag --color "{}"'"
+alias rm='trash-put'
+alias ss='tmatrix -C cyan -t zephyrus'
+alias sx='sxiv'
+alias sxt='sxiv * -t -f &'
+alias sz='source $HOME/.zshrc'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
-alias head='head -n 15'
-alias ls='COLUMNS=80 exa --icons --sort=modified'
-alias ll='COLUMNS=80 exa -lha --icons --sort=modified'
-alias lt='exa -T --icons --sort=modified'
-alias r='ranger'
-alias n='ncmpcpp'
-alias za='zathura'
-alias sx='sxiv'
-alias sxt='sxiv * -t -f &'
-alias lg='lazygit'
 alias weather='curl wttr.in'
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-alias ss='tmatrix -C cyan -t zephyrus'
-alias clock='tty-clock -cs -C 4'
-alias sz='source $HOME/.zshrc'
 alias x='exit'
-alias ipython="ipython --no-banner"
-alias rm='trash-put'
+alias za='zathura'
+alias cat='bat'
+alias po='git config oh-my-zsh.hide-info 1'
 
 # Fuzzy change directory
 funciton fcd() {
-	cd "$(fd -t d | fzf)"
+	cd "$(fd -t d | sk)"
 }
 
 # Fuzzy open
-funciton open() {
-	xdg-open "$(fd -t f | fzf)"
+funciton op() {
+	xdg-open "$(fd -t f | sk)"
+}
+# Fuzzy history search
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] &&fc -l 1 || history) | sk --no-sort --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
 
 # Change directory on exit to lf's current directory
@@ -89,7 +99,7 @@ export ZSH=/usr/share/oh-my-zsh/
 ZSH_THEME="cloud"
 CASE_SENSITIVE="false"
 
-plugins=(zsh-autosuggestions fzf-tab)
+plugins=(zsh-autosuggestions fzf-tab colored-man-pages)
 source $ZSH/oh-my-zsh.sh
 ####   ARCOLINUX SETTINGS   ####
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -186,7 +196,7 @@ alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | n
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
 #search content with ripgrep
-alias rg="rg --sort path"
+#alias rg="rg --sort path"
 
 #get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
@@ -237,17 +247,21 @@ alias lt='exa -T --icons'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/talongi/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/talongi/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/talongi/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/talongi/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/talongi/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/talongi/mambaforge/etc/profile.d/conda.sh"
     else
-        export PATH="/home/talongi/anaconda3/bin:$PATH"
+        export PATH="/home/talongi/mambaforge/bin:$PATH"
     fi
 fi
 unset __conda_setup
+
+if [ -f "/home/talongi/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/talongi/mambaforge/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
 
@@ -257,11 +271,32 @@ eval "$(dircolors -p | \
     dircolors /dev/stdin)"
 
 # FZF theme
+# Rose-dawn
+#export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
+ #--color=fg:#e0def4,bg:#2a273f,hl:#6e6a86
+ #--color=fg+:#908caa,bg+:#232136,hl+:#908caa
+ #--color=info:#9ccfd8,prompt:#f6c177,pointer:#c4a7e7
+# --color=marker:#ea9a97,spinner:#eb6f92,header:#ea9a97"
+# Rose
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
- --color=fg:#e0def4,bg:#2a273f,hl:#6e6a86
- --color=fg+:#908caa,bg+:#232136,hl+:#908caa
+ --color=fg:#e0def4,bg:#1f1d2e,hl:#6e6a86
+ --color=fg+:#908caa,bg+:#191724,hl+:#908caa
  --color=info:#9ccfd8,prompt:#f6c177,pointer:#c4a7e7
- --color=marker:#ea9a97,spinner:#eb6f92,header:#ea9a97"
+ --color=marker:#ebbcba,spinner:#eb6f92,header:#ebbcba"
+
+ # SKIM theme
+ export SKIM_DEFAULT_OPTIONS="
+ --color=fg:#e0def4,bg:#1f1d2e,hl:#6e6a86
+ --color=fg+:#908caa,bg+:#191724,hl+:#908caa
+ --color=info:#9ccfd8,prompt:#f6c177,pointer:#c4a7e7
+ --color=marker:#ebbcba,spinner:#eb6f92,header:#ebbcba"
+
+# --color=fg:#e0def4,bg:#2a273f,hl:#6e6a86
+ #--color=fg+:#908caa,bg+:#232136,hl+:#908caa
+ #--color=info:#9ccfd8,prompt:#f6c177,pointer:#c4a7e7
+# --color=marker:#ea9a97,spinner:#eb6f92,header:#ea9a97"
+
+
 
 # Use vim keybindings
 bindkey -v
@@ -398,3 +433,4 @@ if [[ -o zle ]]; then
 	\compdef _z z
     fi
 fi
+
