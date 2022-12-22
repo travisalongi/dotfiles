@@ -10,7 +10,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: xterm-256color
+  TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -34,8 +34,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 10
-    y: 8
+    x: 12
+    y: 12
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
@@ -112,20 +112,17 @@ font:
     family: Source Code Pro
     family: Iosevka Nerd Font
     family: SF Mono
-    family: VictorMono Nerd Font
-    family: Fira Code
     #family: Sauce Code Pro Nerd Font
     #family: UbuntuMono
     #family: DejuVuSans
     #family: NotoSansMono
-    # family: RobotoMono
+    #family: RobotoMono
     #family: Hack
     #family: JetBrains Mono
-    # family: Mononoki Nerd Font
+    #family: Mononoki Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    style: regular
-    # style: light
+    style: Regular
 
   # Bold font face
   bold:
@@ -136,7 +133,6 @@ font:
     family: Source Code Pro
     family: Iosevka SS09 
     family: SF Mono
-    family: Fira Code
     #family: CodeNewRoman Nerd Font
     #family: RobotoMono Nerd Font
     #family: Hack
@@ -145,7 +141,7 @@ font:
     #family: Mononoki Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    style: SemiBold
+    style: Bold
 
   # Italic font face
   italic:
@@ -156,7 +152,6 @@ font:
     family: Source Code Pro
     family: Iosevka SS09 
     family: Cascadia Code
-    family: VictorMono Nerd Font
     #family: CodeNewRoman Nerd Font
     #family: RobotoMono Nerd Font
     #family: Hack
@@ -165,8 +160,7 @@ font:
     #family: Mononoki Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    # style: SemiLight Italic
-    style: Light Italic
+    style: SemiLight Italic
 
   # Bold italic font face
   bold_italic:
@@ -188,13 +182,13 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 12.5
+  size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
-    x: 0
-    y: 0
+    x: 1
+    y: 1
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
@@ -222,50 +216,48 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-import:
-  - /home/talongi/.config/alacritty/colors/catppuccin-mocha.yml
-#colors:
-  #primary:
-    #background: "0x232136"
-    #foreground: "0xe0def4"
-  #cursor:
-    #text: "0xe0def4"
-    #cursor: "0x56526e"
-  #vi_mode_cursor:
-    #text: "0xe0def4"
-    #cursor: "0x56526e"
-  #line_indicator:
-    #foreground: None
-    #background: None
-  #selection:
-    #text: "0xe0def4"
-    #background: "0x44415a"
-  #normal:
-    #black: "0x393552"
-    #red: "0xeb6f92"
-    #green: "0x3e8fb0"
-    #yellow: "0xf6c177"
-    #blue: "0x9ccfd8"
-    #magenta: "0xc4a7e7"
-    #cyan: "0xea9a97"
-    #white: "0xe0def4"
-  #bright:
-    #black: "0x6e6a86"
-    #red: "0xeb6f92"
-    #green: "0x3e8fb0"
-    #yellow: "0xf6c177"
-    #blue: "0x9ccfd8"
-    #magenta: "0xc4a7e7"
-    #cyan: "0xea9a97"
-    #white: "0xe0def4"
-  #hints:
-    #start:
-      #foreground: "#908caa"
-      #background: "#2a273f"
-    #end:
-      #foreground: "#6e6a86"
-      #background: "#2a273f"
-#        #
+colors:
+  primary:
+    background: "0x232136"
+    foreground: "0xe0def4"
+  cursor:
+    text: "0xe0def4"
+    cursor: "0x56526e"
+  vi_mode_cursor:
+    text: "0xe0def4"
+    cursor: "0x56526e"
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: "0xe0def4"
+    background: "0x44415a"
+  normal:
+    black: "0x393552"
+    red: "0xeb6f92"
+    green: "0x3e8fb0"
+    yellow: "0xf6c177"
+    blue: "0x9ccfd8"
+    magenta: "0xc4a7e7"
+    cyan: "0xea9a97"
+    white: "0xe0def4"
+  bright:
+    black: "0x6e6a86"
+    red: "0xeb6f92"
+    green: "0x3e8fb0"
+    yellow: "0xf6c177"
+    blue: "0x9ccfd8"
+    magenta: "0xc4a7e7"
+    cyan: "0xea9a97"
+    white: "0xe0def4"
+  hints:
+    start:
+      foreground: "#908caa"
+      background: "#2a273f"
+    end:
+      foreground: "#6e6a86"
+      background: "#2a273f"
+        #
 # Colors (Tomorrow Night Bright)
 #colors:
   ## Default colors
@@ -349,7 +341,7 @@ import:
 # The value `0.0` is completely transparent and `1.0` is opaque.
 # background_opacity: 1.0
 #background_opacity: 1.0
-window.opacity: 0.5
+window.opacity: 1.0
 #background_opacity: 0.15
 
 #selection:
