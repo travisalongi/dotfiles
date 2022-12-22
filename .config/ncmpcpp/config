@@ -1,4 +1,4 @@
-mpd_music_dir = "~/Gypsy/Music"
+mpd_music_dir = "$HOME/Zephyrus_share/Music"
 message_delay_time = "1"
 visualizer_type = "spectrum"
 song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
