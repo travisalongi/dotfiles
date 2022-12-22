@@ -3,6 +3,12 @@
 
 set selection-clipboard clipboard
 
+# Keymap
+#map <C-d> half-down
+#map <C-u> half-up
+map <C-d> down
+map <C-u> up
+
 # Open document in fit-width mode by default
 set adjust-open "best-fit"
 
@@ -10,13 +16,14 @@ set adjust-open "best-fit"
 set pages-per-row 1
 
 # Stop at page boundries
-set scroll-page-aware "true"
+set scroll-page-aware "false"
 #set smooth-scroll "true"
 set scroll-full-overlap 0.01
 set scroll-step 100
 
 # Zoom settings
 set zoom-min 10
+set zoom-step 3
 set guioptions ""
 
 # Zathurarc-dark
@@ -55,10 +62,11 @@ set recolor                     "false"
 set recolor-keephue             "false"# Invert color
 map i recolor
 set recolor "false"
-set recolor-lightcolor "#282c34" #00
-set recolor-darkcolor "#979eab" #06
+#set recolor-lightcolor "#282c34" #00
+#set recolor-darkcolor "#979eab" #06
 set recolor-reverse-video "true"
 set recolor-keephue "true"
 
 set render-loading "false"
 set scroll-step 50
+include catppuccin-macchiato
