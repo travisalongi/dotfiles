@@ -1,6 +1,6 @@
 require("toggleterm").setup {
-    hide_numbers = false, -- hide the number column in toggleterm buffers
-    shade_terminals = false,
+    hide_numbers = true, -- hide the number column in toggleterm buffers
+    shade_terminals = true,
     shading_factor = '2', -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
     open_mapping = [[<c-\>]],
     --start_in_insert = true,
@@ -20,10 +20,16 @@ require("toggleterm").setup {
 
 
 local Terminal = require('toggleterm.terminal').Terminal
-local lazygit  = Terminal:new({ cmd = "lazygit", hidden = true })
+local lazygit  = Terminal:new({ cmd = "lazygit", direction='float', hidden = true })
 
 function _lazygit_toggle()
     lazygit:toggle()
 end
 
 vim.keymap.set("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+
+-- local lffm  = Terminal:new({ cmd = "lf", direction='float', hidden = true })
+-- function _lf_toggle()
+--     lffm:toggle()
+-- end
+-- vim.keymap.set("n", "<leader>lf", "<cmd>lua _lf_toggle()<CR>", { noremap = true, silent = true })

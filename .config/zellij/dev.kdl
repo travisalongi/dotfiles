@@ -1,0 +1,30 @@
+// layout_file.kdl
+
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+//        pane size=2 borderless=true {
+//            plugin location="zellij:status-bar"
+//        }
+    }
+        tab name="| 1 -  Files |" cwd="." {
+            pane split_direction="vertical" {
+                command "lf"
+            }
+        }
+        tab name="| 2 -  Term |" cwd="." {
+            pane split_direction="vertical"
+            }
+        tab name="| 3 -  Editor |"  cwd="." {
+            pane split_direction="vertical"{
+                command "nvim"
+            }
+        }
+}
+simplified_ui true
+default_layout "compact"
+
+

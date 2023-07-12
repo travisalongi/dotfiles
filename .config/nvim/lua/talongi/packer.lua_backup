@@ -5,17 +5,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-
-
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('p00f/nvim-ts-rainbow')
     use('mbbill/undotree')
-    use('tpope/vim-fugitive')
     use {
         "ur4ltz/surround.nvim",
         config = function()
@@ -31,10 +22,36 @@ return require('packer').startup(function(use)
         require('orgmode').setup {}
     end
     }
+    use 'ethanholz/nvim-lastplace'
+
+    -- Telescope stuff
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+    use { 'nvim-telescope/telescope-symbols.nvim' }
+    use { "nvim-telescope/telescope-file-browser.nvim" }
+    use { "jvgrootveld/telescope-zoxide" }
+
+    -- Fzf - Lua (testing if better for me than Telescope)
+    use { 'ibhagwan/fzf-lua',
+        -- optional for icon support
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
+    require('packer').startup(function()
+        use {
+            'stevearc/oil.nvim',
+            config = function() require('oil').setup() end
+        }
+    end)
 
     -- Pretty things
+    use { "arturgoms/moonbow.nvim" }
+    use { 'no-clown-fiesta/no-clown-fiesta.nvim' }
     use { "catppuccin/nvim", as = "catppuccin" }
     use { 'ggandor/leap.nvim' }
+    use { "norcalli/nvim-colorizer.lua" }
     use { 'nvim-tree/nvim-web-devicons' }
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
@@ -49,16 +66,6 @@ return require('packer').startup(function(use)
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
-    }
-    use {
-        "folke/zen-mode.nvim",
-        config = function()
-            require("zen-mode").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
     }
 
     -- Completion and LSP

@@ -14,7 +14,7 @@ require('lualine').setup({
     lualine_b = {'diff', 'diagnostics'},
     lualine_c = {
 	    {'filename',
-                 path=0,
+                 path=1,
 	 symbols = {
         modified = ' 💀',      -- Text to show when the file is modified.
         readonly = ' ﰸ ',      -- Text to show when the file is non-modifiable or readonly.

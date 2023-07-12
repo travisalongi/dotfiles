@@ -2,8 +2,8 @@
 set previewer ~/.config/lf/preview
 set preview true
 set hidden true
-set drawbox true
-set icons false
+#set drawbox true
+set icons true
 set ignorecase true
 
 # Custom Functions
@@ -23,7 +23,7 @@ cmd mkdir ${{
 cmd mkfile ${{
   printf "File Name: "
   read ans
-  touch $ans
+  $EDITOR $ans
 }}
 
 cmd sudomkfile ${{
@@ -88,7 +88,7 @@ cmd unarchive ${{
   esac
 }}
 
-cmd zip %zip -r "files.zip" "$f"
+cmd zip %zip -r "$f" "$f"
 cmd tar %tar cvf "$f.tar" "$f"
 cmd targz %tar cvzf "$f.tar.gz" "$f"
 cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
@@ -129,8 +129,8 @@ cmd yankpath :!yankfullpath
 map m
 map o
 map n
-# map "'"
-# map '"'
+#map "'"
+map '"'
 map d
 map c
 map e
@@ -157,8 +157,7 @@ map tc clear_trash
 map tr restore_trash
 
 # Fzf jump
-map ff fzf_jump
-map fm :!explorer.exe . &
+map f fzf_jump
 
 # Zoxide
 map zz z_jump
@@ -204,7 +203,7 @@ map va :!nvim $fs  # Opens selected files
 # Movement
 map \;j cd ~
 map gh cd ~
-map gp cd ~/Drifter/Shallow_damage/
+map gp cd ~/Drifter/Project/
 map gz cd ~/Zephyrus_share
 map gw cd ~/Zephyrus_share/Wedding
 map go cd ~/Zephyrus_share/Org
@@ -212,8 +211,7 @@ map gP cd ~/Zephyrus_share/Pictures
 map gs cd ~/Zephyrus_share/School
 map gc cd ~/.config
 map gT cd ~/.local/share/Trash
-# map gt !thunar . &	
+map gt !thunar . &	
 
 # colors
-export LF_COLORS="$HOME/.config/lf/lf_icons"
 #export LF_COLORS="~/Documents=01;31:~/Downloads=01;31:~/.local/share=01;31:~/.config/lf/lfrc=31:.git/=01;32:.git=32:.gitignore=32:Makefile=32:README.*=33:*.txt=34:*.md=34:ln=01;36:di=01;34:ex=01"

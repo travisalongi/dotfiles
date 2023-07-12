@@ -3,14 +3,13 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-    'eslint',
-    'sumneko_lua',
-    'jedi_language_server'
+    -- 'lua_ls',
+    -- 'jedi_language_server'
 })
 
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {

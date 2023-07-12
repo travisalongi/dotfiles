@@ -1,5 +1,7 @@
 local keymap = vim.keymap.set
 vim.g.mapleader = " "
+vim.keymap.set("i", "jk", "<esc>")
+vim.keymap.set("v", "jk", "<esc>")
 vim.keymap.set("n", "<leader>fv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>te", vim.cmd.Telescope)
 
@@ -7,24 +9,35 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- Keep things centered
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "G", "Gzz")
+vim.keymap.set("n", "{", "{zz")
+vim.keymap.set("n", "}", "}zz")
+
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>n", ":set rnu<CR>")
+vim.keymap.set("n", "<F5>", ":!python %<CR> &")
 
 -- Toggle term
-keymap("n", "<leader>1", ":1ToggleTerm size=95<CR>")
-keymap("n", "<leader>2", ":2ToggleTerm size=95<CR>")
-keymap("n", "<leader>tf", ":ToggleTerm direction=float float_opts.border=double<CR>")
+keymap("n", "<leader>1", ":1ToggleTerm direction=vertical size=95<CR>")
+keymap("n", "<leader>2", ":2ToggleTerm direction=vertical size=95<CR>")
+-- keymap("n", "<F1>", ":1ToggleTerm size=95<CR>")
+keymap("n", "<leader>tf", ":1ToggleTerm direction=float float_opts.border=double<CR>")
+keymap("n", "<leader>tt", ":ToggleTerm direction=float float_opts.border=double<CR>")
+keymap("n", "<F9>", ":ToggleTermSendCurrentLine<CR>")
+keymap("v", "<F8>", ":ToggleTermSendVisualLines<CR>")
 function _G.set_terminal_keymaps()
     local opts = { buffer = 0 }
     vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-    -- vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+    vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
     vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
     vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
     vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
@@ -52,6 +65,7 @@ keymap("n", "<leader>wn", ":vnew<CR>")
 -- To the end of the line
 keymap("n", "Y", "y$")
 keymap("n", "V", "v$")
+keymap("v", "Y", '"+y"') -- Copys visual selction to system clipboard
 
 -- Buffers
 keymap("n", "<leader>bn", ":bn<CR>zz")
@@ -62,9 +76,14 @@ keymap("n", "<leader>bd", ":bdelete<CR>")
 keymap("n", "<leader>bk", ":bdelete<CR>")
 
 keymap("n", "<leader>cd", ":lcd %:p:h<CR>")
-keymap("n", "<leader>ft", ":NvimTreeToggle<CR>")
+-- keymap("n", "<leader>ft", ":Explore<CR>")
+-- keymap("n", "<leader>ft", ":40vnew<CR>:wincmd H<CR>:vertical resize 35<CR>:Oil<CR>")
+keymap("n", "<leader>ft", ":Oil<CR>")
+-- keymap("n", "<leader>fo", require('oil').open_float)
 keymap("n", "<leader>bl", ":!black -l 80 %<CR>")
 keymap("n", "<leader>p", ":pwd<CR>")
 
 keymap("n", "s", "<Plug>(leap-forward)")
-
+keymap("n", "S", "<Plug>(leap-backward)")
+keymap("n", "gs", "<Plug>(leap-from-window)")
+-- "some text power to surround"

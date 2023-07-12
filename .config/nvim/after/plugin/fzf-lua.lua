@@ -1,0 +1,8 @@
+-- local fzf = require('fzf-lua')
+-- vim.keymap.set('n', '<leader>ff', fzf.files, {})
+-- vim.keymap.set('n', '<leader>fg', fzf.live_grep, {})
+-- vim.keymap.set('n', '<leader>bb', fzf.buffers, {})
+-- vim.keymap.set('n', '<leader>fr', fzf.oldfiles, {})
+-- vim.keymap.set('n', '<leader>h', fzf.help_tags, {})
+-- vim.keymap.set('n', '<leader>/', fzf.blines, {})
+-- vim.keymap.set('n', 'z=', fzf.spell_suggest, {})

@@ -6,8 +6,8 @@ set selection-clipboard clipboard
 # Keymap
 #map <C-d> half-down
 #map <C-u> half-up
-map <C-d> down
-map <C-u> up
+# map <C-d> down
+# map <C-u> up
 
 # Open document in fit-width mode by default
 set adjust-open "best-fit"
@@ -59,7 +59,6 @@ set recolor-lightcolor          "#191724"
 set recolor-darkcolor           "#e0def4"
 
 set recolor                     "false"
-set recolor-keephue             "false"# Invert color
 map i recolor
 set recolor "false"
 #set recolor-lightcolor "#282c34" #00
