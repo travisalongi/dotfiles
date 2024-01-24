@@ -1,0 +1,2 @@
+#!/usr/sbin/sh
+tmux display-popup -w 50% -h 95% -E wiki-tui $1
