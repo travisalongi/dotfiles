@@ -1,9 +1,10 @@
-alias sz='source ~/.zshrc'
+alias sz='source $ZDOTDIR/.zshrc'
 alias cl='clear'
 alias x='exit'
 
 alias l='eza -l1 --icons'
 alias ll='eza -lha --icons'
+alias lt='eza --tree --icons'
 
 alias ~='cd ~'
 alias ..='cd ..'
@@ -11,17 +12,39 @@ alias ..='cd ..'
 alias v='nvim'
 alias vi='nvim'
 alias sx='sxiv'
+alias sxt='sxiv * -t &'
 alias za='zathura'
 alias mm='micromamba'
 alias mma='micromamba activate'
 alias ipy='ipython --no-banner'
 alias pacman='sudo pacman'
 
+# alias wiki='wiki-tui'
+alias dic='dict -d wn'
+
+alias weather='curl wttr.in'
+alias ss="neo -aD --speed=3.0 --color=gray --charset=greek --maxdpc=2 --glitchpct=2 --lingerms=1,500 -F --density=0.55 --screensaver"
+
 # Windows stuff
 alias fm='explorer.exe .'
+
+# Functions
+# Fuzzy search and open academic papers with zathura
 function pap() {
     papers_dir="$HOME/Talongi_share/Papers/"
     selection="$(ls $papers_dir | fzf)"
     echo $papers_dir$selection
     zathura $papers_dir$selection &
+}
+
+# Fuzzy select and change directory
+function fcd() {
+    sel=$(fd -t d | fzf)
+    cd $sel
+}
+
+# Make a directory and then change into that directory
+function take() {
+    mkdir $1
+    cd $1
 }
