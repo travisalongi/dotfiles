@@ -93,6 +93,7 @@ require('lazy').setup({
     'martinsione/darkplus.nvim',
     'rebelot/kanagawa.nvim',
     'navarasu/onedark.nvim',
+    'projekt0n/github-nvim-theme',
     {
       "folke/tokyonight.nvim",
       lazy = false,
@@ -151,7 +152,6 @@ require('lazy').setup({
         }
     },
 
-    {"Saghen/blink.cmp"},
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -180,7 +180,7 @@ require('lazy').setup({
         priority = 1000,
         lazy = false,
         opts = {
-            dashboard = {enabled=false},
+            dashboard = {enabled=true},
         },
         keys = {
         { "<c-T>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
@@ -189,5 +189,3 @@ require('lazy').setup({
         },
     },
 })
-
-

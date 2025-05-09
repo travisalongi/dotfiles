@@ -1,2 +1,1 @@
-require("talongi")
-
+require("config.lazy")
