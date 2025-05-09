@@ -1,0 +1,41 @@
+[[manager.prepend_keymap]]
+on = "<C-p>"
+run = 'shell -- qlmanage -p "$@"'
+
+[[manager.prepend_keymap]]
+on   = [ "<C-s>" ]
+run  = 'shell "$SHELL" --block --confirm'
+desc = "Open shell here"
+
+
+[[manager.prepend_keymap]]
+on   = "F"
+run  = "plugin smart-filter"
+desc = "Smart filter"
+
+
+[[manager.prepend_keymap]]
+on   = "T"
+run  = "plugin --sync max-preview"
+desc = "Maximize or restore preview"
+
+
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"
+
+# [[manager.prepend_keymap]]
+# on = ["<C-a>"] 
+# run = "whatever"
+# desc = "Unbind"
+
+[[manager.prepend_keymap]]
+on = ["<A-k>"]
+run = "peek -1"
+desc = "peek up 5 units in the preview"
+
+[[manager.prepend_keymap]]
+on = ["<A-j>"]
+run = "peek 1"
+desc = "peek up 5 units in the preview"
