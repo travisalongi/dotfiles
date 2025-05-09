@@ -2,6 +2,7 @@ alias sz='source $ZDOTDIR/.zshrc'
 alias cl='clear'
 alias x='exit'
 
+#alias cat='bat'
 alias l='eza -l1 --icons'
 alias ll='eza -lha --icons'
 alias lt='eza --tree --icons'
@@ -16,8 +17,16 @@ alias sxt='sxiv * -t &'
 alias za='zathura'
 alias mm='micromamba'
 alias mma='micromamba activate'
+alias pandoc="pandoc --defaults ~/.config/pandoc/defaults.yaml"
 alias ipy='ipython --no-banner'
 alias pacman='sudo pacman'
+alias gdu='gdu-go'
+
+alias gaa='git add .'
+alias gs='git status'
+alias gc='git commit -m'
+alias gp='git push'
+alias lg='lazygit'
 
 # alias wiki='wiki-tui'
 alias dic='dict -d wn'
@@ -27,14 +36,14 @@ alias ss="neo -aD --speed=3.0 --color=gray --charset=greek --maxdpc=2 --glitchpc
 
 # Windows stuff
 alias fm='explorer.exe .'
+alias fm='open .'
 
 # Functions
-# Fuzzy search and open academic papers with zathura
-function pap() {
-    papers_dir="$HOME/Talongi_share/Papers/"
-    selection="$(ls $papers_dir | fzf)"
-    echo $papers_dir$selection
-    zathura $papers_dir$selection &
+
+# Fuzzy open 
+function op() {
+    sel=$(fd --no-ignore | zf --height 30)
+    open $sel
 }
 
 # Fuzzy select and change directory
@@ -47,4 +56,48 @@ function fcd() {
 function take() {
     mkdir $1
     cd $1
+}
+
+imv() {
+        kitty +kitten icat $(fd --no-ignore -e jpg -e png -e gif -e tiff | fzf)
+    }
+
+
+# ripgrep->fzf->nvim [QUERY]
+rfv() (
+  RELOAD='reload:rg --column --color=always --smart-case {q} || :'
+  OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+            nvim {1} +{2}     # No selection. Open the current line in Vim.
+          else
+            nvim +cw -q {+f}  # Build quickfix list for the selected items.
+          fi'
+  fzf --disabled --ansi --multi \
+      --bind "start:$RELOAD" --bind "change:$RELOAD" \
+      --bind "enter:become:$OPENER" \
+      --bind "ctrl-o:execute:$OPENER" \
+      --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
+      --delimiter : \
+      --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+      --preview-window '~4,+{2}+4/3,<80(up)' \
+      --query "$*"
+)
+
+# Fzf - reverse history search
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+
+
+# Print tree structure in the preview window
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'"
+
+# Fuzzy search and open academic papers with zathura
+function pap() {
+    papers_dir="$HOME/Talongi_share/Papers/"
+    selection="$(ls $papers_dir | fzf)"
+    echo $papers_dir$selection
+    zathura $papers_dir$selection &
 }
