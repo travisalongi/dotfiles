@@ -1,0 +1,41 @@
+# THEME STUFF
+# theme = kanagawa dragon
+# theme = dark:catppuccin-mocha,light:catppuccin-latte
+theme = dark:everforest-dark-hard,light:everforest-light-hard
+# theme = dark:rose-pine,light:rose-pine-dawn
+# theme = dark:Github-Dark-Default,light:Github-Light-Default
+# theme = kanso-ink
+background-opacity = 1
+background-blur-radius = 30
+mouse-scroll-multiplier = 0.50
+title = " "
+cursor-color = #40a02b
+cursor-text = #dce0e8
+cursor-style = underline
+mouse-hide-while-typing
+unfocused-split-opacity= 0.7
+# background = #1C1C1C
+
+
+
+font-size = 16
+# font-family = FiraCode Nerd Font Ret
+# font-family = Maple Mono
+# font-family = Akkurat-Mono
+# font-family = CaskaydiaCove Nerd Font
+# font-family = CommitMono
+font-family = JetBrainsMono NFM Regular
+font-family-italic = JetBrainsMono NFM Italic
+font-family-bold = JetBrainsMono NFM Bold
+window-padding-y = 10,0
+window-padding-x = 10,10
+window-padding-balance = true
+adjust-cell-height = 30%
+macos-titlebar-proxy-icon = hidden
+
+confirm-close-surface = false
+
+keybind = global:cmd+shift+t=toggle_quick_terminal
+# keybind = global:cmd+f=toggle_fullscreen
+quick-terminal-animation-duration = 0.05
+quick-terminal-position = top
