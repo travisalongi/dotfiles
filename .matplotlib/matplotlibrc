@@ -1,0 +1,56 @@
+
+figure.figsize : 10, 10
+figure.autolayout: True
+
+font.size : 20
+font.family : Arial
+# font.family : "Helvetica"
+# font.weight : 470
+# axes.labelweight : 520
+# axes.titleweight:   530
+
+# font.family : Arial
+legend.edgecolor : black
+legend.facecolor : "white"
+legend.framealpha : 0.8
+legend.fontsize : 18
+legend.fancybox : True
+legend.shadow : True
+legend.borderpad  : 0.3
+legend.markerscale:   0.5
+legend.handlelength:  1.1   # the length of the legend lines
+#legend.handleheight:  0.7  # the height of the legend handle
+legend.handletextpad: 0.5  # the space between the legend line and legend text
+legend.borderaxespad: 0.3  # the border between the axes and legend edge
+#legend.columnspacing: 2.0  # column separation
+
+
+lines.marker : o
+lines.markersize : 12
+lines.markeredgecolor : black
+lines.linewidth : 4
+
+xtick.top : True
+ytick.right : True
+xtick.direction : in
+ytick.direction : in
+ytick.major.size:    7.5
+ytick.minor.size:    3.5
+ytick.major.width:   2
+ytick.minor.width:   1.2
+xtick.major.size:    7.5
+xtick.minor.size:    3.5
+xtick.major.width:   2
+xtick.minor.width:   1.2
+
+# axes.facecolor      :  "#cdd6f4"
+axes.facecolor      :  "whitesmoke"
+# figure.facecolor : "lightgray"
+# figure.edgecolor : F1F1F1   
+# savefig.facecolor :F1F1F1    
+# savefig.edgecolor : F1F1F1   
+
+# keymap.quit_all : q
+# backend : Agg
+# backend : Agg
+# backend : Agg

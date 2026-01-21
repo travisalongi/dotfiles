@@ -4,10 +4,7 @@ $hostname\
 $directory\
 $git_branch\
 $git_state\
-$git_status\
 $git_metrics\
-$python\
-$conda\
 $fill\
 $cmd_duration
 $line_break\
@@ -30,8 +27,8 @@ symbol = " "
 symbol = " "
 
 [conda]
-symbol = "🐍 "
-format = '[$symbol$environment](dimmend green) '
+symbol = "🐍 - "
+format = '[$symbol$environment](italic bright-green) '
 
 [cmd_duration]
 min_time = 500
@@ -157,7 +154,8 @@ symbol = " "
 [python]
 symbol = " "
 pyenv_version_name = true
-format = '[$symbol $pyenv_version_name]($style)'
+style = 'green'
+format = '[$symbol \($virtualenv\)]($style)'
 
 [rlang]
 symbol = "󰟔 "
