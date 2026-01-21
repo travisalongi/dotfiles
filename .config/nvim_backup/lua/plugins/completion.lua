@@ -11,7 +11,7 @@ return {
     -- },
     {
         'saghen/blink.cmp',
-        dependencies = { 'rafamadriz/friendly-snippets', {'Kaiser-Yang/blink-cmp-dictionary',dependencies = {"nvim-lua/plenary.nvim"}}, 'saghen/blink.compat' },
+        dependencies = { 'rafamadriz/friendly-snippets', 'Kaiser-Yang/blink-cmp-dictionary', 'saghen/blink.compat' },
         version = '*',
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
@@ -55,15 +55,14 @@ return {
             },
 
             sources = {
-                -- default = { 'lsp', 'path', 'buffer', 'dictionary', 'snippets' },
-                default = { 'lsp', 'path', 'buffer', 'dictionary'},
+                default = { 'lsp', 'path', 'buffer', 'dictionary', 'snippets' },
                 providers = {
                     lsp = {
                         score_offset = 90,
-                        max_items = 5,
+                        max_items = 8,
                     },
                     path = {
-                        max_items = 4,
+                        max_items = 5,
                         score_offset = 15,
                     },
                     buffer = {
@@ -84,7 +83,11 @@ return {
                         score_offset = 10,
                         max_items = 5,
                     },
-
+                    -- markdown = {
+                    --     name = 'RenderMarkdown',
+                    --     module = 'render-markdown.integ.blink',
+                    --     fallbacks = { 'lsp' },
+                    -- }
                 },
             },
 
@@ -94,6 +97,12 @@ return {
         config = function(_, opts)
             -- Setup the plugin
             require('blink.cmp').setup(opts)
+
+            -- Set custom highlights
+            -- vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#1f1f28", fg = "#dcd7ba" })
+            -- vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "#1f1f28", fg = "#dcd7ba" })
+            -- vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "#1f1f28", fg = "#dcd7ba" })
+            -- vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { bg = "#1f1f28", fg = "#dcd7ba" })
         end,
     },
 }

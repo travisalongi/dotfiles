@@ -1,13 +1,13 @@
 local keymap = vim.keymap.set
 local cmd = vim.cmd
--- local notify = Snacks.notify.notify
+local notify = Snacks.notify.notify
 
 vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>te", vim.cmd.Telescope)
+keymap("n", ";", ':lua MiniJump2d.start(MiniJump2d.builtin_opts.word_start)<CR>')
 keymap("n", "<leader>mf", ':Pick files<CR>')
 keymap("n", "<leader>mb", ':Pick buffers<CR>')
 keymap("n", "<leader>mt", ':lua MiniFiles.open()<CR>')
-
-keymap("n", "<leader>ob", ":Obsidian<CR>", {silent = true})
 
 
 keymap("v", "J", ":m '>+1<CR>gv=gv")
@@ -25,13 +25,9 @@ keymap("n", "G", "Gzz")
 keymap("n", "{", "{zz")
 keymap("n", "}", "}zz")
 
--- Scroll 3 lines per wheel tick
-vim.keymap.set('', '<ScrollWheelUp>', '1k', { noremap = true, silent = true })
-vim.keymap.set('', '<ScrollWheelDown>', '1j', { noremap = true, silent = true })
-
 keymap("n", "<leader>f", function()
     vim.lsp.buf.format()
-    -- notify("Formatting File", { title = "LSP", style = "fancy" })
+    notify("Formatting File", { title = "LSP", style = "fancy" })
 end, { silent = true })
 keymap({ "n", "v" }, "<leader>y", [["+y]])
 
@@ -40,6 +36,10 @@ keymap("n", "<leader>n", ":set rnu<CR>")
 keymap("n", "<F5>", ":!python %<CR> &")
 
 -- OS Specific stuff
+keymap("n", "<leader>o", function()
+    cmd("!open <cfile>")
+    notify("Opening file with system default", { title = "OS" })
+end)
 keymap("n", "<leader>fm", ":!open .<CR>")
 
 
@@ -98,76 +98,43 @@ keymap("n", "<leader>bk", ":bdelete<CR>")
 -- Change directory
 keymap("n", "<leader>cd", function()
     cmd("lcd %:p:h")
-    -- notify('Changing directory to current file', { title = "KEYMAP" })
-end, { silent = false })
+    notify('Changing directory to current file', { title = "KEYMAP" })
+end, { silent = true })
 
 keymap("n", "<leader>ft", ":Oil<CR>", { silent = true })
 keymap("n", "<leader>bl", ":!black -l 80 %<CR>")
 
 
 keymap("n", "<leader>md", ":lua require('render-markdown').toggle()<CR>", { silent = true })
-
 keymap("n", "<leader>nh", function()
     cmd("nohlsearch")
-    -- notify('Turnoff search highlighting', { title = "KEYMAP" })
+    notify('Turnoff search highlighting', { title = "KEYMAP" })
 end, { silent = true })
-
 -- keymap("n", "<leader>wc", "g<C-g>")
 
 -- Overseer
 keymap("n", "<leader>or", function()
     cmd("OverseerRunCmd ipython %")
-    -- notify('RUNNING FILE in Ipython Asynchronously', { title = "OVERSEER", style = 'fancy' })
+    notify('RUNNING FILE in Ipython Asynchronously', { title = "OVERSEER", style = 'fancy' })
 end, { silent = true })
 keymap("n", "<leader>ot", function()
     cmd("OverseerToggle")
-    -- notify('Overseer Processes Viewer', { title = "OVERSEER", style = "fancy", timeout = 5000 })
+    notify('Overseer Processes Viewer', { title = "OVERSEER", style = "fancy", timeout = 5000 })
 end, { silent = true })
 
 keymap("n", "<leader>p", function()
     local cwd = vim.fn.getcwd() -- Get the current working directory
-    print(cwd)
     -- Snacks.notify.notify("Current directory: " .. cwd)
-    -- notify("Current directory: " .. cwd, { title = 'OS' })
-end, { silent = false })
-
-
-keymap("n", "<leader>od", function()
-    cmd("Obsidian dailies")
-    -- notify('Obsidian Daily Notes', { title = "KEYMAP" })
+    notify("Current directory: " .. cwd, { title = 'OS' })
 end, { silent = true })
 
-
-keymap("n", "<leader>ch", function()
-    cmd("ObsidianToggleCheckbox")
-    -- notify('Toggle check box!', { title = "KEYMAP" })
-end, { silent = true })
-
-
--- mac quicklook option for oil buffers
-local qpreview = function()
-  local oil = require('oil')
-  local entry = oil.get_cursor_entry()
-  if not entry then
-    return vim.notify("Could not fine entry under cursor")
-  end
-  local url = vim.api.nvim_buf_get_name(0) .. entry.name
-  local path = string.gsub(url, "oil://", "")
-  if path == nil then
-      return vim.notify("Cursor is not on valid entry")
-  end
-  vim.system({ "qlmanage", "-p", path }, { }, function(result)
-      if result.code ~= 0 then
-          vim.notify("'qlmanage -p' failed with code: " .. result.code)
-          vim.notify("Stderr:\n" .. result.stderr)
-      end
-  end)
-end
-
-vim.api.nvim_create_autocmd("User", {
-    pattern = "OilEnter",
-    callback = function(args)
-        local b = args.data.buf_id
-        vim.keymap.set("n", "g<leader>", qpreview, { buffer = b, desc = "Quick Preview" })
-    end,
-})
+-- local oil_open = false
+-- keymap("n", "<leader>ft", function()
+--     if oil_open then
+--         vim.cmd("bd") -- Close buffer
+--     else
+--         vim.cmd("topleft 40vs")
+--         require("oil").open()
+--     end
+--     oil_open = not oil_open
+-- end, { desc = "Toggle Oil file tree" })

@@ -1,8 +1,6 @@
-pdf-engine: lualatex
+pdf-engine: xelatex
 variables:
   geometry: margin=1in
-  # mainfont: Times New Roman
-  mainfont: Arial
+  mainfont: Times New Roman
   sansfont: Arial
   monofont: JetBrainsMono Nerd Font
-

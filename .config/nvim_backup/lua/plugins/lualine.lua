@@ -1,16 +1,3 @@
-local mode_icons = {
-    ['n']  = '🟢', -- Normal
-    ['no'] = '🟢',
-    ['v']  = '🟠', -- Visual
-    ['V']  = '🟠',
-    ['']  = '🟠', -- Visual block
-    ['i']  = '✏️', -- Insert
-    ['ic'] = '✏️',
-    ['R']  = '🔴', -- Replace
-    ['Rv'] = '🔴',
-    ['c']  = '💬', -- Command
-    ['t']  = '📜', -- Terminal
-}
 return {
     {
         'nvim-lualine/lualine.nvim',
@@ -22,22 +9,18 @@ return {
                     -- theme = 'kanagawa',
                     section_separators = { left = '', right = '' },
                     component_separators = { left = '|', right = '|' },
-                    -- disabled_filetypes = {'latex','markdown'}
+                    disabled_filetypes = {'latex','markdown'}
                 },
                 sections = {
                     lualine_a = {
                         {
-                            function()
-                                local m = vim.fn.mode()
-                                return mode_icons[m] or m
-                            end,
-                            color = {bg = "none"},
+                            'mode',
+                            icons_enabled = true,
                             separator = { left = '', right = '' },
-                            padding = { left = 1, right = 1 },
+                            right_padding = -1
                         },
                     },
-                    -- lualine_b = { 'branch', 'diff', 'diagnostics' },
-                    lualine_b = { 'diff', 'diagnostics' },
+                    lualine_b = { 'branch','diff', 'diagnostics' },
                     lualine_c = {
                         {
                             'filename',
@@ -49,23 +32,12 @@ return {
                                 unnamed = '[No Name]', -- Text to show for unnamed buffers.
                                 newfile = '[New]', -- Text to show for new created file before first writting
                             },
-                            shortening_target = 40,
+                            shortening_target = 10,
                         },
 
                     },
-                    lualine_x = { 
-                        { 'lsp_status', },
-                        { 'filetype',
-                            padding = {right = -1,left = 1},
-                            icon_only = true,
-                        }
-                    },
-                    lualine_y = {
-                        {'progress',
-                            separator = { left = '|'},
-                            color = {bg = 'none'}
-                        }
-                    },
+                    lualine_x = { {'lsp_status', }, { 'filetype', icon_only = true }, },
+                    lualine_y = { 'progress' },
                     lualine_z = {}
                     -- lualine_z = {
                     --     { 'location', separator = { left = '', right = '' }, left_padding = -1 },
@@ -80,7 +52,7 @@ return {
                     lualine_z = {}
                 },
                 tabline = {},
-                extensions = { 'toggleterm', 'oil', 'overseer' }
+                extensions = { 'toggleterm','oil','overseer' }
 
             })
         end

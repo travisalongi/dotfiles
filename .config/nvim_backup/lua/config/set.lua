@@ -1,13 +1,11 @@
 vim.opt.nu = true
 vim.opt.nuw = 1
 vim.opt.relativenumber = true
-vim.opt.winborder = "rounded"
 
 -- Was costing 600 ms delay in startup
 -- vim.opt.clipboard = 'unnamedplus'
-vim.opt.clipboard = ''
+vim.opt.clipboard=''
 vim.opt.mouse = 'a'
-
 
 
 vim.opt.tabstop = 4
@@ -29,7 +27,7 @@ vim.opt.undofile = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
-vim.opt.ignorecase = true
+vim.opt.ignorecase=true
 
 vim.opt.scrolloff = 12
 vim.opt.signcolumn = "yes"
@@ -41,36 +39,35 @@ vim.opt.colorcolumn = "0"
 
 vim.opt.cursorline = true
 
-vim.opt.foldmethod = "marker"
--- vim.opt.foldmethod = "indent"
+vim.opt.foldmethod = 'marker'
 
 -- Saves folds
--- vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
---     pattern = { "*.*" },
---     desc = "save view (folds), when closing file",
---     command = "mkview",
--- })
--- vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
---     pattern = { "*.*" },
---     desc = "load view (folds), when opening file",
---     command = "silent! loadview"
--- })
+vim.api.nvim_create_autocmd({"BufWinLeave"}, {
+  pattern = {"*.*"},
+  desc = "save view (folds), when closing file",
+  command = "mkview",
+})
+vim.api.nvim_create_autocmd({"BufWinEnter"}, {
+  pattern = {"*.*"},
+  desc = "load view (folds), when opening file",
+  command = "silent! loadview"
+})
 
-vim.diagnostic.config({ virtual_text = false, underline = true })
+vim.diagnostic.config({virtual_text=false,underline=true})
 
-
--- -- Use python as compiler for :make if file type is py
--- vim.api.nvim_create_autocmd("FileType", {
---     pattern = "python",
---     callback = function()
---         vim.bo.makeprg = "python %"
---         vim.bo.errorformat = "%f:%l:%m"
---     end
--- })
 
 -- Use python as compiler for :make if file type is py
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "tex" },
+    pattern = "python",
+    callback = function()
+        vim.bo.makeprg = "python %"
+        vim.bo.errorformat = "%f:%l:%m"
+    end
+})
+
+-- Use python as compiler for :make if file type is py
+vim.api.nvim_create_autocmd("FileType", {
+    pattern ={ "tex"},
     callback = function()
         vim.opt_local.spell = true
         vim.keymap.set("n", "j", "gj")
@@ -79,8 +76,8 @@ vim.api.nvim_create_autocmd("FileType", {
     end
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "markdown" },
+vim.api.nvim_create_autocmd("FileType",{
+    pattern = {"markdown"},
     callback = function()
         -- Ensure Snacks is loaded and disable scrolling
         local snacks_loaded, Snacks = pcall(require, "snacks")
@@ -95,4 +92,3 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 
--- vim.opt.autochdir = false

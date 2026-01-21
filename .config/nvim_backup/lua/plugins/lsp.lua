@@ -11,13 +11,13 @@ return {
         },
     },
 
---     {
--- 	"L3MON4D3/LuaSnip",
--- 	-- follow latest release.
--- 	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
--- 	-- install jsregexp (optional!).
--- 	build = "make install_jsregexp"
--- },
+    {
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!).
+	build = "make install_jsregexp"
+},
 
     {
         'neovim/nvim-lspconfig',
@@ -41,29 +41,25 @@ return {
                                     ["reportOptionalMemberAccess"] = "none",
                                     ["reportOptionalSubscript"] = "none",
                                     ["reportArgumentType"] = "none",
-                                    ["reportCallIssues"] = "none",
-                                    ["reportPossiblyUnboundVariable"] = "none",
+                                    ["reportCallIssues"] = "none"
                                 },
                             },
                         },
                     },
                 },
-                -- markdown_oxide = {},
-                -- texlab = {},
-                -- harper_ls = {},
+                markdown_oxide = {},
+                texlab = {},
             }
         },
 
         -- Single `config` function to handle LSP setup
         config = function(_, opts)
+            local lspconfig = require('lspconfig')
+            -- local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-            -- local lspconfig = require('lspconfig')
-            -- for server, config in pairs(opts.servers) do
-            --     config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-            --     lspconfig[server].setup(config)
-            -- end
             for server, config in pairs(opts.servers) do
-                vim.lsp.enable(server)
+                config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+                lspconfig[server].setup(config)
             end
 
             vim.keymap.set("n", "gd", vim.lsp.buf.definition)

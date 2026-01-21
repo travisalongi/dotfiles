@@ -5,14 +5,22 @@ return
     lazy = false,
     ---@type snacks.Config
     opts = {
-        lazygit = { enabled = false },
         bigfile = { enabled = true },
-        dashboard = { enabled = false },
+        dashboard = { enabled = true },
         image = {
-            enabled = false,
+            enabled = true,
             doc = {
+                -- enable image viewer for documents
+                -- a treesitter parser must be available for the enabled languages.
+                -- supported language injections: markdown, html
                 enabled = true,
-                inline = true,
+                -- render the image inline in the buffer
+                -- if your env doesn't support unicode placeholders, this will be disabled
+                -- takes precedence over `opts.float` on supported terminals
+                inline = false,
+                -- render the image in a floating window
+                -- only used if `opts.inline` is disabled
+                float = true,
                 max_width = 80,
                 max_height = 40,
             },
@@ -39,9 +47,8 @@ return
                 },
             }
         },
-        words = { enabled = false },
+        words = { enabled = true },
         terminal = {
-            enabled = false,
             win = {
                 style = 'float',
                 height = 0.8,
@@ -102,7 +109,6 @@ return
                     }
                 }
             },
-            ui_select = true,
             matcher = {
                 cwd_bonus = true,
                 frequency = true
@@ -117,19 +123,25 @@ return
         { "<leader>n",  function() Snacks.notifier.show_history() end,                              desc = "Notification History" },
         { "<leader>bd", function() Snacks.bufdelete() end,                                          desc = "Delete Buffer" },
         { "<leader>cR", function() Snacks.rename.rename_file() end,                                 desc = "Rename File" },
-        { "<leader>gB", function() Snacks.gitbrowse() end,                                          desc = "Git Browse",               mode = { "n", "v" } },
+        { "<leader>gB", function() Snacks.gitbrowse() end,                                          desc = "Git Browse",                  mode = { "n", "v" } },
         { "<leader>gb", function() Snacks.git.blame_line() end,                                     desc = "Git Blame Line" },
+        { "<leader>gf", function() Snacks.lazygit.log_file() end,                                   desc = "Lazygit Current File History" },
+        { "<leader>gg", function() Snacks.lazygit() end,                                            desc = "Lazygit" },
+        { "<leader>gl", function() Snacks.lazygit.log() end,                                        desc = "Lazygit Log (cwd)" },
         { "<leader>un", function() Snacks.notifier.hide() end,                                      desc = "Dismiss All Notifications" },
+        { "<c-/>",      function() Snacks.terminal() end,                                           desc = "Toggle Terminal" },
+        { "<c-_>",      function() Snacks.terminal() end,                                           desc = "which_key_ignore" },
+        { "]]",         function() Snacks.words.jump(vim.v.count1) end,                             desc = "Next Reference",              mode = { "n", "t" } },
+        { "[[",         function() Snacks.words.jump(-vim.v.count1) end,                            desc = "Prev Reference",              mode = { "n", "t" } },
 
-        { "<leader>sp", function() Snacks.picker() end,                                             desc = "Fuzzy Finder",             mode = { "n", "t" } },
-        { "<leader>ff", function() Snacks.picker.files({ ignored = true, layout = "default" }) end, desc = "Fuzzy Finder",             mode = { "n", "t" } },
-        -- { "<leader>fr", function() Snacks.picker.smart() end,                                       desc = "Fuzzy Finder",             mode = { "n", "t" } },
-        { "<leader>fr", function() Snacks.picker.recent() end,                                       desc = "Fuzzy Finder",             mode = { "n", "t" } },
-        { "<leader>bb", function() Snacks.picker.buffers({ layout = "default"}) end,               desc = "Fuzzy Finder",             mode = { "n", "t" } },
-        { "<leader>fg", function() Snacks.picker.grep() end,                                        desc = "Fuzzy Finder",             mode = { "n", "t" } },
-        { "<leader>zo", function() Snacks.picker.zoxide() end,                                      desc = "Fuzzy Finder",             mode = { "n", "t" } },
-        { "<leader>/",  function() Snacks.picker.lines() end,                                       desc = "Fuzzy Finder",             mode = { "n", "t" } },
-        { "z=",         function() Snacks.picker.spelling({ layout = "select" }) end,               desc = "Fuzzy Finder",             mode = { "n", "t" } },
+        { "<leader>sp", function() Snacks.picker() end,                                             desc = "Fuzzy Finder",                mode = { "n", "t" } },
+        { "<leader>ff", function() Snacks.picker.files({ ignored = true, layout = "default" }) end, desc = "Fuzzy Finder",                mode = { "n", "t" } },
+        { "<leader>fr", function() Snacks.picker.smart() end,                                       desc = "Fuzzy Finder",                mode = { "n", "t" } },
+        { "<leader>bb", function() Snacks.picker.buffers({ layout = "ivy" }) end,                   desc = "Fuzzy Finder",                mode = { "n", "t" } },
+        { "<leader>fg", function() Snacks.picker.grep() end,                                        desc = "Fuzzy Finder",                mode = { "n", "t" } },
+        { "<leader>zo", function() Snacks.picker.zoxide() end,                                      desc = "Fuzzy Finder",                mode = { "n", "t" } },
+        { "<leader>/",  function() Snacks.picker.lines() end,                                       desc = "Fuzzy Finder",                mode = { "n", "t" } },
+        { "z=",         function() Snacks.picker.spelling({ layout = "select" }) end,               desc = "Fuzzy Finder",                mode = { "n", "t" } },
         {
             "<leader>N",
             desc = "Neovim News",
