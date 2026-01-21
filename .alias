@@ -18,7 +18,8 @@ alias za='zathura'
 alias mm='micromamba'
 alias mma='micromamba activate'
 alias pandoc="pandoc --defaults ~/.config/pandoc/defaults.yaml"
-alias ipy='ipython --no-banner'
+# alias ipy='ipython --no-banner'
+alias ipy='uv run ipython --no-banner'
 alias pacman='sudo pacman'
 alias gdu='gdu-go'
 
@@ -38,11 +39,20 @@ alias ss="neo -aD --speed=3.0 --color=gray --charset=greek --maxdpc=2 --glitchpc
 alias fm='explorer.exe .'
 alias fm='open .'
 
+# Trying out television as a replacement for fzf
+alias fzf='tv'
+
 # Functions
+
+# # Fuzzy open 
+# function op() {
+#     sel=$(fd --no-ignore | zf --height 30)
+#     open $sel
+# }
 
 # Fuzzy open 
 function op() {
-    sel=$(fd --no-ignore | zf --height 30)
+    sel=$(tv files)
     open $sel
 }
 
@@ -71,13 +81,14 @@ rfv() (
           else
             nvim +cw -q {+f}  # Build quickfix list for the selected items.
           fi'
-  fzf --disabled --ansi --multi \
+  \fzf --disabled --ansi --multi \
       --bind "start:$RELOAD" --bind "change:$RELOAD" \
       --bind "enter:become:$OPENER" \
       --bind "ctrl-o:execute:$OPENER" \
       --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
       --delimiter : \
-      --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+      # --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+      --preview 'cat {2} {1}' \
       --preview-window '~4,+{2}+4/3,<80(up)' \
       --query "$*"
 )
