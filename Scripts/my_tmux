@@ -1,0 +1,12 @@
+#!/bin/bash
+
+tmux new-session -s ENV -n Editor -d
+tmux new-window -n Term -d 
+tmux send-keys -t ENV:Editor "nvim" Enter
+tmux new-window -n Files -d 
+tmux send-keys -t ENV:Files "yazi" Enter
+tmux new-window -n Papers -d 
+tmux send-keys -t ENV:Papers "$HOME/Scripts/paper_search.sh" Enter
+tmux next-window
+
+tmux attach

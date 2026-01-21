@@ -1,0 +1,9 @@
+
+tmux new-session -s T -n editor -d
+tmux new-window -n term
+tmux send-keys -t T:editor "nvim" Enter
+tmux new-window -n files
+tmux send-keys -t T:files "yazi" Enter
+tmux last-window
+
+tmux attach
